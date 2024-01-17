@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 static size_t	countword(const char *str, char c)
@@ -34,8 +33,6 @@ static size_t	countdel(const char *str, char c)
 
 	i = 0;
 	count = 0;
-	if (!str)
-		return (0);
 	while (str[i] != '\0')
 	{
 		while (str[i] == c && str[i])
@@ -47,6 +44,24 @@ static size_t	countdel(const char *str, char c)
 	if (i > 0 && str[i - 1] == c)
 		count--;
 	return (count);
+}
+
+static char	**ffree(char **str, size_t count)
+{
+	size_t	i;
+
+	if (str)
+	{
+		i = 0;
+		while (i < count)
+		{
+			if (str[i] != NULL)
+				free(str[i]);
+			i++;
+		}
+		free(str);
+	}
+	return (NULL);
 }
 
 static char	**createarr(char **arr, const char *s, char c)
@@ -63,7 +78,7 @@ static char	**createarr(char **arr, const char *s, char c)
 			continue ;
 		arr[j] = malloc(sizeof(char) * countword(s, c) + 1);
 		if (arr[j] == NULL)
-			return (0);
+			return (ffree(arr, j));
 		k = 0;
 		while (*s != c && *s != '\0')
 		{
@@ -87,11 +102,12 @@ char	**ft_split(const char *s, char c)
 	arr = malloc(sizeof(char *) * (countdel(s, c) + 1));
 	if (arr == NULL)
 		return (NULL);
-	createarr(arr, s, c);
+	arr = createarr(arr, s, c);
 	return (arr);
 }
 
-/*int main(void)
+/*#include <stdio.h>
+int main(void)
 {
     const char *input_string = "paco\0pacoo\0pacooo\0pacoooo\0";
     char delimiter = '\0';
