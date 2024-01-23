@@ -3,123 +3,101 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 14:07:40 by javier            #+#    #+#             */
-/*   Updated: 2024/01/23 14:13:22 by javier           ###   ########.fr       */
+/*   Created: 2024/01/22 15:09:21 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/23 20:31:52 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t	i;
+	char	*ch;
+	int		i;
+	int		j;
+	int		count;
 
-	i = 0;
-	if (!s)
+	i = ft_strlen ((char *) s1);
+	j = ft_strlen ((char *) s2);
+	count = 0;
+	ch = (char *) malloc (i + j + 1);
+	if (ch == '\0')
 		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	while (count < i)
+	{
+		ch[count] = s1[count];
+		count++;
+	}
+	count = 0;
+	while (count < j)
+	{
+		ch[i + count] = s2 [count];
+		count++;
+	}
+	ch[i + count] = '\0';
+	return (ch);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_substr(char *s)
+{
+	int		i;
+	int		j;
+	char	*ch;
+
+	i = 0;
+	j = 0;
+	while (s[i] != '\n' && s[i] != '\0')
+		i++;
+	ch = (char *) malloc (i + 1);
+	if (ch == '\0')
+		return (0);
+	i++;
+	while (s[i] != '\0')
+	{
+		ch[j] = s[i];
+		j++;
+		i++;
+	}
+	ch[j] = '\0';
+	return (ch);
+}
+
+int	ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	if (!s)
-		return (0);
-	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i] != '\0')
+	while (i < BUFFER_SIZE)
 	{
 		if (s[i] == (char) c)
-			return ((char *)&s[i]);
-		i++;
+			return (1);
+		else
+			i++;
 	}
 	return (0);
 }
 
-char	*ft_strjoin(char *left_str, char *buff)
+void	ft_putstr(char *s)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	int	i;
 
-	if (!left_str)
+	i = 0;
+	while (s[i] != '\n')
 	{
-		left_str = (char *)malloc(1 * sizeof(char));
-		left_str[0] = '\0';
+		write (1, &s[i], 1);
+		i++;
 	}
-	if (!left_str || !buff)
-		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(left_str) + ft_strlen(buff)) + 1));
-	if (str == NULL)
-		return (NULL);
-	i = -1;
-	j = 0;
-	if (left_str)
-		while (left_str[++i] != '\0')
-			str[i] = left_str[i];
-	while (buff[j] != '\0')
-		str[i++] = buff[j++];
-	str[ft_strlen(left_str) + ft_strlen(buff)] = '\0';
-	free(left_str);
-	return (str);
+	write (1, "\n", 1); //Hacer condición para que no ponga salto de línea si es el final del archivo Y NO ACABA EN '\N'
 }
 
-char	*ft_get_line(char *left_str)
+size_t	ft_strlen(const char *len)
 {
-	int		i;
-	char	*str;
+	int	i;
 
 	i = 0;
-	if (!left_str[i])
-		return (NULL);
-	while (left_str[i] && left_str[i] != '\n')
+	while (len[i] != '\0')
 		i++;
-	str = (char *)malloc(sizeof(char) * (i + 2));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (left_str[i] && left_str[i] != '\n')
-	{
-		str[i] = left_str[i];
-		i++;
-	}
-	if (left_str[i] == '\n')
-	{
-		str[i] = left_str[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-char	*ft_new_left_str(char *left_str)
-{
-	int		i;
-	int		j;
-	char	*str;
-
-	i = 0;
-	while (left_str[i] && left_str[i] != '\n')
-		i++;
-	if (!left_str[i])
-	{
-		free(left_str);
-		return (NULL);
-	}
-	str = (char *)malloc(sizeof(char) * (ft_strlen(left_str) - i + 1));
-	if (!str)
-		return (NULL);
-	i++;
-	j = 0;
-	while (left_str[i])
-		str[j++] = left_str[i++];
-	str[j] = '\0';
-	free(left_str);
-	return (str);
+	return (i);
 }
