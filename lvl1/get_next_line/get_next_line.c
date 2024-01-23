@@ -3,65 +3,137 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 14:07:41 by javier            #+#    #+#             */
-/*   Updated: 2024/01/23 14:23:37 by javier           ###   ########.fr       */
+/*   Created: 2024/01/22 14:42:24 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/23 21:01:47 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Falta controlar errores en todoooooooooo
+
 #include "get_next_line.h"
+#include <stdio.h>
 
-char	*ft_read_to_left_str(int fd, char *left_str)
+int	modi_strchr(const char *s, int c)
 {
-	char	*buff;
-	int		rd_bytes;
+	int	i;
 
-	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buff)
-		return (NULL);
-	rd_bytes = 1;
-	while (!ft_strchr(left_str, '\n') && rd_bytes != 0)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		rd_bytes = read(fd, buff, BUFFER_SIZE);
-		if (rd_bytes == -1)
+		if (s[i] == (char)c)
+			return (1);
+		else
+			i++;
+	}
+	return (0);
+}
+
+char	*print_extra(char *s1)
+{
+	int		i;
+	int		len;
+	char	*trimmed;
+
+	len = ft_strlen(s1);
+	trimmed = (char *) malloc (len + 1);
+	if (trimmed == '\0')
+		return (0);
+	i = 0;
+	while (s1[i] != '\n')
+	{
+		write(1, &s1[i], 1);
+		i++;
+	}
+	write (1, "\n", 1);
+	i++;
+	len = 0;
+	while (s1[i] != '\0')
+	{
+		trimmed [len] = s1 [i];
+		len++;
+		i++;
+	}
+	trimmed [i] = '\0';
+	return (trimmed);
+}
+
+char	*save_extra(char *extra)
+{
+	while (modi_strchr (extra, '\n'))
+	{
+		extra = print_extra(extra);
+		if (extra == NULL)
+			return (NULL);
+	}
+	return (extra);
+}
+
+char	*ft_read(int fd, char *stati)
+{
+	char	*line;
+	char	*buf;
+	int		bytes;
+
+	buf = (char *) malloc (BUFFER_SIZE + 1);
+	line = (char *) malloc (BUFFER_SIZE + 1);
+	if (stati != NULL)
+		line = ft_strjoin(line, stati);
+	if (line == NULL || buf == NULL)
+		return (NULL);
+	while ((ft_strchr(buf, '\n')) != 1)
+	{
+		bytes = read(fd, buf, BUFFER_SIZE);
+		if (bytes < 0)
 		{
-			free(buff);
+			free (buf);
 			return (NULL);
 		}
-		buff[rd_bytes] = '\0';
-		left_str = ft_strjoin(left_str, buff);
+		line = ft_strjoin(line, buf);
 	}
-	free(buff);
-	return (left_str);
+	free (buf);
+	return (line);
 }
 
 char	*get_next_line(int fd)
 {
+	static char	*schar;
 	char		*line;
-	static char	*left_str;
+	char		*returned;
+	int			i;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
-	left_str = ft_read_to_left_str(fd, left_str);
-	if (!left_str)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647)
 		return (NULL);
-	line = ft_get_line(left_str);
-	left_str = ft_new_left_str(left_str);
+	line = ft_read(fd, schar);
+	ft_putstr(line);
+	i = ft_strlen(line);
+	returned = (char *) malloc (i);
+	if (returned == NULL)
+		return (NULL);
+	i = 0;
+	while (line[i] != '\n')
+	{
+		returned [i] = line[i];
+		i++;
+	}
+	schar = ft_substr(line);
+	schar = save_extra(schar);
+	free (line);
 	return (line);
 }
 
-#include <fcntl.h>
+/*#include <fcntl.h> //for open
 int main(void)
 {
-    int i;
-
-    i = 0;
-    int fd = open("refranes.txt", O_RDONLY);
-    while (i < 5)
-    {
-        get_next_line(fd);
-        i++;
-    }
-    return (0);
-}
+	int i = 0;
+	int fd = open("chistes.txt", O_RDONLY);
+	get_next_line(fd);
+	while (i < 5)
+	{
+		get_next_line(fd);
+		i++;
+	}
+	close(fd);
+	return (0);
+}*/
