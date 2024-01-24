@@ -30,8 +30,6 @@ BONUS_OBJS = $(BONUS:.c=.o)
 $(NAME): $(OBJECTS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) $< -o $@
 clean:
 	rm -f $(OBJECTS) $(BONUS_OBJS)
 
