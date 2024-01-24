@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:09:21 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/23 20:31:52 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/01/24 18:46:40 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	j = ft_strlen ((char *) s2);
 	count = 0;
 	ch = (char *) malloc (i + j + 1);
-	if (ch == '\0')
-		return (0);
+	if (ch == NULL)
+		return (NULL);
 	while (count < i)
 	{
 		ch[count] = s1[count];
@@ -44,15 +44,18 @@ char	*ft_substr(char *s)
 {
 	int		i;
 	int		j;
+	int		len;
 	char	*ch;
 
 	i = 0;
 	j = 0;
+	len = 0;
 	while (s[i] != '\n' && s[i] != '\0')
 		i++;
-	ch = (char *) malloc (i + 1);
-	if (ch == '\0')
-		return (0);
+	len = ft_strlen(s);
+	ch = (char *) malloc (len - i + 1);
+	if (ch == NULL)
+		return (NULL);
 	i++;
 	while (s[i] != '\0')
 	{
@@ -69,7 +72,7 @@ int	ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (i < BUFFER_SIZE)
+	while (s[i] != '\0')
 	{
 		if (s[i] == (char) c)
 			return (1);
@@ -77,19 +80,6 @@ int	ft_strchr(const char *s, int c)
 			i++;
 	}
 	return (0);
-}
-
-void	ft_putstr(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\n')
-	{
-		write (1, &s[i], 1);
-		i++;
-	}
-	write (1, "\n", 1); //Hacer condición para que no ponga salto de línea si es el final del archivo Y NO ACABA EN '\N'
 }
 
 size_t	ft_strlen(const char *len)
