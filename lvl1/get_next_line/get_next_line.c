@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:42:24 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/23 21:01:47 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/01/24 19:06:06 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,59 +15,48 @@
 #include "get_next_line.h"
 #include <stdio.h>
 
-int	modi_strchr(const char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			return (1);
-		else
-			i++;
-	}
-	return (0);
-}
-
-char	*print_extra(char *s1)
+char	*ft_strdup(const char *s1)
 {
 	int		i;
-	int		len;
-	char	*trimmed;
+	int		j;
+	char	*a;
 
-	len = ft_strlen(s1);
-	trimmed = (char *) malloc (len + 1);
-	if (trimmed == '\0')
-		return (0);
 	i = 0;
-	while (s1[i] != '\n')
-	{
-		write(1, &s1[i], 1);
-		i++;
-	}
-	write (1, "\n", 1);
-	i++;
-	len = 0;
+	j = 0;
 	while (s1[i] != '\0')
-	{
-		trimmed [len] = s1 [i];
-		len++;
 		i++;
+	a = (char *) malloc (i + 1);
+	if (a == '\0')
+		return (0);
+	while (j < i)
+	{
+		a[j] = s1[j];
+		j++;
+	}
+	a[j] = '\0';
+	return (a);
+}
+
+char	*ft_strtrim(char const *s1)
+{
+	int		i;
+	char	*trimmed;
+	int		len;
+
+	i = 0;
+	len = 0;
+	while (s1[i] != '\n' && s1[i] != '\0')
+		i++;
+	trimmed = (char *) malloc (i + 1);
+	if (trimmed == NULL)
+		return (NULL);
+	while (len < i)
+	{
+		trimmed [len] = s1 [len];
+		len++;
 	}
 	trimmed [i] = '\0';
 	return (trimmed);
-}
-
-char	*save_extra(char *extra)
-{
-	while (modi_strchr (extra, '\n'))
-	{
-		extra = print_extra(extra);
-		if (extra == NULL)
-			return (NULL);
-	}
-	return (extra);
 }
 
 char	*ft_read(int fd, char *stati)
@@ -77,22 +66,22 @@ char	*ft_read(int fd, char *stati)
 	int		bytes;
 
 	buf = (char *) malloc (BUFFER_SIZE + 1);
-	line = (char *) malloc (BUFFER_SIZE + 1);
-	if (stati != NULL)
-		line = ft_strjoin(line, stati);
-	if (line == NULL || buf == NULL)
+	if (buf == NULL)
 		return (NULL);
-	while ((ft_strchr(buf, '\n')) != 1)
+	line = (stati != NULL) ? ft_strdup(stati) : ft_strdup("");
+	while ((bytes = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
-		bytes = read(fd, buf, BUFFER_SIZE);
-		if (bytes < 0)
-		{
-			free (buf);
-			return (NULL);
-		}
+		buf [bytes] = '\0';
 		line = ft_strjoin(line, buf);
+		if ((ft_strchr(buf, '\n')) == 1)
+			break ;
 	}
 	free (buf);
+	if (bytes < 0)
+	{
+		free(buf);
+		return (NULL);
+	}
 	return (line);
 }
 
@@ -100,26 +89,13 @@ char	*get_next_line(int fd)
 {
 	static char	*schar;
 	char		*line;
-	char		*returned;
-	int			i;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = ft_read(fd, schar);
-	ft_putstr(line);
-	i = ft_strlen(line);
-	returned = (char *) malloc (i);
-	if (returned == NULL)
-		return (NULL);
-	i = 0;
-	while (line[i] != '\n')
-	{
-		returned [i] = line[i];
-		i++;
-	}
 	schar = ft_substr(line);
-	schar = save_extra(schar);
-	free (line);
+	line = ft_strtrim(line);
+	printf("Returrrrrrrr: %s\n", line); //Borrar
 	return (line);
 }
 
@@ -129,11 +105,12 @@ int main(void)
 	int i = 0;
 	int fd = open("chistes.txt", O_RDONLY);
 	get_next_line(fd);
-	while (i < 5)
+	while (i < 60)
 	{
 		get_next_line(fd);
 		i++;
 	}
+	system("leaks -q a.out");
 	close(fd);
 	return (0);
 }*/
