@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:09:21 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/24 18:46:40 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/01/26 07:11:37 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,29 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ch);
 }
 
-char	*ft_substr(char *s)
+
+char *ft_substr(char *s)
 {
-	int		i;
-	int		j;
+	int		start;
 	int		len;
-	char	*ch;
+	int		i;
+	char	*str;
 
 	i = 0;
-	j = 0;
-	len = 0;
-	while (s[i] != '\n' && s[i] != '\0')
-		i++;
+	start = 0;
 	len = ft_strlen(s);
-	ch = (char *) malloc (len - i + 1);
-	if (ch == NULL)
+	while (s[start] != '\n')
+	   start++;
+	start = start + 1;
+	str	= (char *) malloc (len - start + 1);
+	if (s == NULL)
 		return (NULL);
-	i++;
-	while (s[i] != '\0')
+	while (start < len) //Hay que añadir otra condición como hasta que no encuentre otro '\n'????
 	{
-		ch[j] = s[i];
-		j++;
-		i++;
+		str[i++] = s [start++];
 	}
-	ch[j] = '\0';
-	return (ch);
+	str[i] = '\0';
+	return (str);
 }
 
 int	ft_strchr(const char *s, int c)
@@ -91,3 +89,10 @@ size_t	ft_strlen(const char *len)
 		i++;
 	return (i);
 }
+
+/*#include <stdio.h>
+int main (void)
+{
+	printf("%s", ft_substr("sdfgd\nfghjkh\newrtyuu\nretrhnhgr\n"));
+	return (0);
+}*/
