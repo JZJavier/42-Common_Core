@@ -6,14 +6,26 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:42:24 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/24 19:06:06 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/01/26 08:37:26 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //Falta controlar errores en todoooooooooo
 
 #include "get_next_line.h"
-#include <stdio.h>
+
+#include <unistd.h> //Borrarrrrrrrrrrrrr funcion
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+}
 
 char	*ft_strdup(const char *s1)
 {
@@ -44,58 +56,57 @@ char	*ft_strtrim(char const *s1)
 	int		len;
 
 	i = 0;
-	len = 0;
-	while (s1[i] != '\n' && s1[i] != '\0')
-		i++;
-	trimmed = (char *) malloc (i + 1);
+	len = ft_strlen(s1);
+	trimmed = (char *) malloc (len + 1);
 	if (trimmed == NULL)
 		return (NULL);
-	while (len < i)
+	while (s1[i] != '\n' && s1[i] != '\0')
 	{
-		trimmed [len] = s1 [len];
-		len++;
+		trimmed [i] = s1 [i];
+		i++;
 	}
-	trimmed [i] = '\0';
+	trimmed [i] = '\n'; // Se puede poner en otro lado??
+	trimmed [i + 1] = '\0';  //Esto es necesario?????????????? NO
 	return (trimmed);
 }
 
-char	*ft_read(int fd, char *stati)
+char	*ft_read(int fd, char *buf,char *stati)
 {
 	char	*line;
-	char	*buf;
 	int		bytes;
 
-	buf = (char *) malloc (BUFFER_SIZE + 1);
-	if (buf == NULL)
-		return (NULL);
-	line = (stati != NULL) ? ft_strdup(stati) : ft_strdup("");
+	if (stati == NULL)
+		line = ft_strdup("");
+	else
+		line = ft_strdup(stati);
 	while ((bytes = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
-		buf [bytes] = '\0';
+		buf[bytes] = '\0';
 		line = ft_strjoin(line, buf);
 		if ((ft_strchr(buf, '\n')) == 1)
 			break ;
 	}
-	free (buf);
 	if (bytes < 0)
-	{
-		free(buf);
 		return (NULL);
-	}
 	return (line);
 }
 
 char	*get_next_line(int fd)
 {
 	static char	*schar;
+	char		*buf;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = ft_read(fd, schar);
+	buf = (char *) malloc (BUFFER_SIZE + 1);
+	line = ft_read(fd, buf, schar);
+	if (line == NULL)
+		return (NULL);
 	schar = ft_substr(line);
 	line = ft_strtrim(line);
-	printf("Returrrrrrrr: %s\n", line); //Borrar
+	free (buf);
+	//ft_putstr(line); //Borrarrrrrrrrrrrrrrrrrr
 	return (line);
 }
 
@@ -105,7 +116,7 @@ int main(void)
 	int i = 0;
 	int fd = open("chistes.txt", O_RDONLY);
 	get_next_line(fd);
-	while (i < 60)
+	while (i < 80)
 	{
 		get_next_line(fd);
 		i++;
