@@ -1,113 +1,100 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line.c                                     :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:42:24 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/26 08:37:26 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/27 13:16:32 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/27 16:52:53 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Falta controlar errores en todoooooooooo
-
 #include "get_next_line.h"
 
-#include <unistd.h> //Borrarrrrrrrrrrrrr funcion
-void	ft_putstr(char *s)
+char	*ft_trim(char *str)
 {
-	int	i;
+	int		i;
+	char	*extra;
 
+	if (!str || !str[0])
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0' && str[i] != '\n')
+		i++;
+	if (str[i] == '\n')
+		i++;
+	extra = (char *)malloc(i + 1);
+	if (extra == NULL)
+		return (NULL);
+	i = 0;
+	while (str[i] != '\0' && str[i] != '\n')
 	{
-		write (1, &s[i], 1);
+		extra[i] = str[i];
 		i++;
 	}
+	if (str[i] == '\n')
+		extra[i++] = '\n';
+	extra[i] = '\0';
+	return (extra);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_newline(char *str)
 {
+	char	*buf;
 	int		i;
 	int		j;
-	char	*a;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
+	while (str[i] != '\0' && str[i] != '\n')
 		i++;
-	a = (char *) malloc (i + 1);
-	if (a == '\0')
-		return (0);
-	while (j < i)
+	if (str[i] == '\0')
 	{
-		a[j] = s1[j];
+		free(str);
+		return (NULL);
+	}
+	i += (str[i] == '\n');
+	buf = (char *) malloc (ft_strlen(str) - i + 1);
+	if (buf == NULL)
+		return (NULL);
+	j = 0;
+	while (str[i + j] != '\0')
+	{
+		buf[j] = str[i + j];
 		j++;
 	}
-	a[j] = '\0';
-	return (a);
-}
-
-char	*ft_strtrim(char const *s1)
-{
-	int		i;
-	char	*trimmed;
-	int		len;
-
-	i = 0;
-	len = ft_strlen(s1);
-	trimmed = (char *) malloc (len + 1);
-	if (trimmed == NULL)
-		return (NULL);
-	while (s1[i] != '\n' && s1[i] != '\0')
-	{
-		trimmed [i] = s1 [i];
-		i++;
-	}
-	trimmed [i] = '\n'; // Se puede poner en otro lado??
-	trimmed [i + 1] = '\0';  //Esto es necesario?????????????? NO
-	return (trimmed);
-}
-
-char	*ft_read(int fd, char *buf,char *stati)
-{
-	char	*line;
-	int		bytes;
-
-	if (stati == NULL)
-		line = ft_strdup("");
-	else
-		line = ft_strdup(stati);
-	while ((bytes = read(fd, buf, BUFFER_SIZE)) > 0)
-	{
-		buf[bytes] = '\0';
-		line = ft_strjoin(line, buf);
-		if ((ft_strchr(buf, '\n')) == 1)
-			break ;
-	}
-	if (bytes < 0)
-		return (NULL);
-	return (line);
+	buf[j] = '\0';
+	free(str);
+	return (buf);
 }
 
 char	*get_next_line(int fd)
 {
 	static char	*schar;
 	char		*buf;
-	char		*line;
+	int			bytes;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buf = (char *) malloc (BUFFER_SIZE + 1);
-	line = ft_read(fd, buf, schar);
-	if (line == NULL)
+	bytes = 1;
+	buf = (char *) malloc(BUFFER_SIZE + 1);
+	if (buf == NULL)
 		return (NULL);
-	schar = ft_substr(line);
-	line = ft_strtrim(line);
-	free (buf);
-	//ft_putstr(line); //Borrarrrrrrrrrrrrrrrrrr
-	return (line);
+	while (!(ft_strchr(schar, '\n')) && bytes != 0)
+	{
+		bytes = read(fd, buf, BUFFER_SIZE);
+		if (bytes == -1)
+		{
+			free(buf);
+			return (NULL);
+		}
+		buf[bytes] = '\0';
+		schar = ft_strjoin(schar, buf);
+	}
+	free(buf);
+	buf = ft_trim(schar);
+	schar = ft_newline(schar);
+	return (buf);
 }
 
 /*#include <fcntl.h> //for open
@@ -121,7 +108,6 @@ int main(void)
 		get_next_line(fd);
 		i++;
 	}
-	system("leaks -q a.out");
 	close(fd);
 	return (0);
 }*/
