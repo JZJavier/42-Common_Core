@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line.h                                     :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@tudent.42madrid.com>    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:48:05 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/24 16:33:04 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/27 13:11:47 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/27 15:40:29 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@
 #  define BUFFER_SIZE 200
 # endif
 
+// Main
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_substr(char *s);
-int		ft_strchr(const char *s, int c);
+
+// Utils
 size_t	ft_strlen(const char *len);
-char	*ft_strtrim(char const *s1);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin2(char *ch, char *s1, char *s2);
 
 #endif
