@@ -1,82 +1,75 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils.c                               :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 15:09:21 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/26 07:11:37 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/27 13:10:59 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/27 15:40:04 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin2(char *ch, char *s1, char *s2)
 {
-	char	*ch;
 	int		i;
 	int		j;
-	int		count;
 
-	i = ft_strlen ((char *) s1);
-	j = ft_strlen ((char *) s2);
-	count = 0;
-	ch = (char *) malloc (i + j + 1);
-	if (ch == NULL)
-		return (NULL);
-	while (count < i)
+	i = 0;
+	j = 0;
+	while (s1 && s1[i] != '\0')
 	{
-		ch[count] = s1[count];
-		count++;
+		ch[i] = s1[i];
+		i++;
 	}
-	count = 0;
-	while (count < j)
+	while (s2 && s2[j] != '\0')
 	{
-		ch[i + count] = s2 [count];
-		count++;
+		ch[i + j] = s2 [j];
+		j++;
 	}
-	ch[i + count] = '\0';
+	ch[i + j] = '\0';
 	return (ch);
 }
 
-
-char *ft_substr(char *s)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	int		start;
-	int		len;
-	int		i;
-	char	*str;
+	char	*ch;
 
-	i = 0;
-	start = 0;
-	len = ft_strlen(s);
-	while (s[start] != '\n')
-	   start++;
-	start = start + 1;
-	str	= (char *) malloc (len - start + 1);
-	if (s == NULL)
-		return (NULL);
-	while (start < len) //Hay que añadir otra condición como hasta que no encuentre otro '\n'????
+	if (!s1)
 	{
-		str[i++] = s [start++];
+		s1 = (char *) malloc(1);
+		s1[0] = '\0';
 	}
-	str[i] = '\0';
-	return (str);
+	if (!s2)
+	{
+		return (NULL);
+	}
+	ch = (char *) malloc (ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (ch == NULL)
+		return (NULL);
+	ch = ft_strjoin2(ch, s1, s2);
+	free (s1);
+	return (ch);
 }
 
-int	ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s == NULL)
+		return (NULL);
+	while (s[i])
 	{
 		if (s[i] == (char) c)
-			return (1);
+			return ((char *) &s[i]);
 		else
 			i++;
 	}
+	if ((char) c == '\0')
+		return ((char *) &s[i]);
 	return (0);
 }
 
@@ -89,10 +82,3 @@ size_t	ft_strlen(const char *len)
 		i++;
 	return (i);
 }
-
-/*#include <stdio.h>
-int main (void)
-{
-	printf("%s", ft_substr("sdfgd\nfghjkh\newrtyuu\nretrhnhgr\n"));
-	return (0);
-}*/
