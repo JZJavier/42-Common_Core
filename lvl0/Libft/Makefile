@@ -12,7 +12,7 @@
 NAME      = libft.a
 CC        = cc
 AR        = ar
-CFLAGS    = -c -Wall -Wextra -Werror
+CFLAGS    = -Wall -Wextra -Werror
 ARFLAGS   = -rcs
 
 SOURCES   = ft_isalnum.c ft_isdigit.c ft_memcmp.c ft_putchar_fd.c ft_split.c ft_strjoin.c \
