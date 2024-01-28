@@ -39,7 +39,7 @@ all: ${NAME}
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus: $(OBJECTS) $(BONUS_OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re
