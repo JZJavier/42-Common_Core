@@ -46,22 +46,17 @@ static size_t	countdel(const char *str, char c)
 	return (count);
 }
 
-static char	**ffree(char **str, size_t count)
+static void	ffree(char **str, size_t count)
 {
 	size_t	i;
-
-	if (str)
+	
+	i = 0;
+	while (i < count)
 	{
-		i = 0;
-		while (i < count)
-		{
-			if (str[i] != NULL)
-				free(str[i]);
-			i++;
-		}
-		free(str);
+		free(str[i]);
+		i++;
 	}
-	return (NULL);
+	free(str);
 }
 
 static char	**createarr(char **arr, const char *s, char c)
