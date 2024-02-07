@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:31:47 by jjuarez-          #+#    #+#             */
 /*   Updated: 2024/01/13 17:04:01 by jjuarez-         ###   ########.fr       */
