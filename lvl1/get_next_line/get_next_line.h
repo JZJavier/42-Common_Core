@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                     :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:11:47 by jjuarez-          #+#    #+#             */
 /*   Updated: 2024/01/27 15:40:29 by jjuarez-         ###   ########.fr       */
