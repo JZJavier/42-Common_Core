@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:30 by jjuarez-          #+#    #+#             */
 /*   Updated: 2024/01/12 18:03:10 by jjuarez-         ###   ########.fr       */
@@ -46,7 +46,7 @@ static size_t	countdel(const char *str, char c)
 	return (count);
 }
 
-static void	ffree(char **str, size_t count)
+static char	**ffree(char **str, size_t count)
 {
 	size_t	i;
 	
@@ -57,6 +57,7 @@ static void	ffree(char **str, size_t count)
 		i++;
 	}
 	free(str);
+	return (NULL);
 }
 
 static char	**createarr(char **arr, const char *s, char c)
