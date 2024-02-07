@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:59:58 by jjuarez-          #+#    #+#             */
 /*   Updated: 2024/01/15 10:47:45 by jjuarez-         ###   ########.fr       */
