@@ -49,7 +49,7 @@ static size_t	countdel(const char *str, char c)
 static char	**ffree(char **str, size_t count)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (i < count)
 	{
