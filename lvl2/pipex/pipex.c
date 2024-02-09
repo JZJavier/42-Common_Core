@@ -85,7 +85,7 @@ int	main(int argc, char **argv, char **envp)
 
 	if (argc != 5)
 	{
-		ft_putstr_fd("./pipex infile cmd cmd outfile\n", 2);
+		ft_putstr_fd("./pipex file1 cmd1 cmd2 file2\n", 2);
 		exit(0);
 	}
 	if (pipe(fd) == -1)
