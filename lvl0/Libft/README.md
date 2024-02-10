@@ -21,7 +21,7 @@ There are 4 sections:
 Functions from the Libc | Adicional functtions | Bonus | Personal functions
 :---------:| :-----------: | :-------------: | :-----------:
 ft_isalpha | ft_substr     | ft_lstnew       | ft_strcmp
-ft_isdigit | ft_strjoin    | ft_lstadd_front | get_next_line_bomus
+ft_isdigit | ft_strjoin    | ft_lstadd_front | get_next_line_bonus
 ft_isalnum | ft_strtrim    | ft_lstsize      | 
 ft_isascii | ft_split      | ft_lstlast      | 
 ft_isprint | ft_itoa       | ft_lstadd_back  |
