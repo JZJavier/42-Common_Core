@@ -35,7 +35,7 @@ void	here_doc_in(char **argv, int *fd)
 	close(fd[0]);
 	while (1)
 	{
-		ret = get_next_line(0);
+		ret = get_next_line_bonus(0);
 		if (ft_strncmp(ret, argv[2], ft_strlen(argv[2])) == 0)
 		{
 			free(ret);
