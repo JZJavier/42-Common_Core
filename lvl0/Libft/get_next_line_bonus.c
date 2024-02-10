@@ -93,7 +93,7 @@ char	*read_file(int fd, char *res)
 	return (res);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line_bonus(int fd)
 {
 	static char	*buffer[OPEN_MAX];
 	char		*line;
