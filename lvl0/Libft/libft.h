@@ -71,6 +71,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
 
 //Funciones no solicitadas en la Libft
 int		ft_strcmp(char *s1, char *s2);
-char	*get_next_line(int fd);
+char	*get_next_line_bonus(int fd);
 
 #endif
