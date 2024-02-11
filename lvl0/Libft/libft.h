@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:14:28 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/09 12:05:22 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:17:13 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
 
 //Funciones no solicitadas en la Libft
 int		ft_strcmp(char *s1, char *s2);
-char	*get_next_line_bonus(int fd);
+char	*get_next_line(int fd);
 
 #endif
