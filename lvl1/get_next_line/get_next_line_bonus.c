@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                     :+:      :+:    :+:  */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 13:16:32 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/11 19:06:05 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/02/11 18:12:48 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/11 18:52:32 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_free(char *buf, char **schar)
 {
 	free(buf);
-	free(*schar);
+	free (*schar);
 	*schar = NULL;
 	return (NULL);
 }
@@ -78,30 +78,30 @@ char	*ft_newline(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*schar;
+	static char	*schar[256];
 	char		*buf;
 	int			bytes;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0)
 		return (NULL);
 	bytes = 1;
 	buf = (char *) malloc(BUFFER_SIZE + 1);
 	if (buf == NULL)
 		return (NULL);
-	while (!(ft_strchr(schar, '\n')) && bytes != 0)
+	while (!(ft_strchr(schar[fd], '\n')) && bytes != 0)
 	{
 		bytes = read(fd, buf, BUFFER_SIZE);
 		if (bytes == -1)
 		{
-			ft_free(buf, &schar);
+			ft_free(buf, &schar[fd]);
 			return (NULL);
 		}
 		buf[bytes] = '\0';
-		schar = ft_strjoin(schar, buf);
+		schar[fd] = ft_strjoin(schar[fd], buf);
 	}
 	free(buf);
-	buf = ft_trim(schar);
-	schar = ft_newline(schar);
+	buf = ft_trim(schar[fd]);
+	schar[fd] = ft_newline(schar[fd]);
 	return (buf);
 }
 
@@ -110,10 +110,10 @@ int main(void)
 {
 	int i = 0;
 	int fd = open("chistes.txt", O_RDONLY);
-	get_next_line(fd);
+	get_next_line_bonus(fd);
 	while (i < 80)
 	{
-		get_next_line(fd);
+		get_next_line_bonus(fd);
 		i++;
 	}
 	close(fd);
