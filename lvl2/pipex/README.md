@@ -25,3 +25,8 @@ $> cmd1 << LIMITER | cmd2 >> file2
 
 $> ./pipex here_doc LIMITER cmd1 cmd2 file2
 ```
+
+## Grade
+<p align="center">
+<img width="210" alt="125" src="https://github.com/JZJavier/42/assets/76801285/9b5924a8-8876-4bce-b783-1e6b5da93252">
+</p>
