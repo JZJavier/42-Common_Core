@@ -6,13 +6,13 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:12:48 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/11 18:52:32 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/12 07:05:19 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-void	*ft_free(char *buf, char **schar)
+void	*ft_ffree(char *buf, char **schar)
 {
 	free(buf);
 	free (*schar);
@@ -93,7 +93,7 @@ char	*get_next_line(int fd)
 		bytes = read(fd, buf, BUFFER_SIZE);
 		if (bytes == -1)
 		{
-			ft_free(buf, &schar[fd]);
+			ft_ffree(buf, &schar[fd]);
 			return (NULL);
 		}
 		buf[bytes] = '\0';
