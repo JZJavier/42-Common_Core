@@ -6,7 +6,7 @@
 #    By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 09:40:51 by jjuarez-          #+#    #+#              #
-#    Updated: 2024/02/12 12:03:41 by jjuarez-         ###   ########.fr        #
+#    Updated: 2024/02/12 12:04:28 by jjuarez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,3 +42,5 @@ bonus: clean
 	$(CC) $(CFLAGS) $(SRCS_BONUS) -o $(NAME)
 
 re : fclean all
+
+.PHONY: all clean fclean re
