@@ -6,16 +6,13 @@
 #    By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 09:40:51 by jjuarez-          #+#    #+#              #
-#    Updated: 2024/02/12 12:04:28 by jjuarez-         ###   ########.fr        #
+#    Updated: 2024/02/12 12:05:26 by jjuarez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
-
 CC = cc
-
 CFLAGS = -Werror -Wall -Wextra
-
 RM = rm -rf
 
 SRCS = 	pipex.c pipex_utils.c libft/libft.a
