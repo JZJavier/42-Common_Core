@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:33:36 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/09 06:01:27 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:41:00 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void	ft_exec(char *cmd, char **envp);
 char	*ft_path(char *cmd, char **envp);
 char	*ft_envp(char *variable, char **envp);
 void	ft_free(char **arr);
-int	ft_open(char *file, int in_or_out);
+int		ft_open(char *file, int status);
 
 #endif

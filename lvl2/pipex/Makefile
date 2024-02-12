@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjuarez- <jjuarez-@student.42.fr>          +#+  +:+       +#+         #
+#    By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 09:40:51 by jjuarez-          #+#    #+#              #
-#    Updated: 2024/02/09 05:44:06 by jjuarez-         ###   ########.fr        #
+#    Updated: 2024/02/09 11:26:54 by jjuarez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-variable = pipex
+NAME = pipex
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Werror -Wall -Wextra
 
@@ -20,21 +20,24 @@ RM = rm -rf
 
 SRCS = 	pipex.c pipex_utils.c libft/libft.a
 
+SRCS_BONUS = bonus/pipex_bonus.c bonus/pipex_utils_bonus.c libft/libft.a
 
-$(variable) :
+$(NAME) :
 	make all -C libft
-	gcc $(CFLAGS) $(SRCS) -o $(variable)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 
-all : $(variable)
+all : $(NAME)
 
 fclean : clean
-	$(RM) $(variable)
+	$(RM) $(NAME)
 	make fclean -C libft
 
 clean :
-	$(RM) $(variable)
+	$(RM) $(NAME)
 	make clean -C libft
+bonus: clean
+	make all -C libft
+	$(CC) $(CFLAGS) $(SRCS_BONUS) -o $(NAME)
 
 re : fclean all
-

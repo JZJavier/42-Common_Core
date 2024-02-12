@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:34:01 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/09 05:59:28 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/12 07:18:52 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	ft_open(char *file, int in_or_out)
+int	ft_open(char *file, int status)
 {
 	int	fd;
 
-	if (in_or_out == 0)
-		fd = open(file, O_RDONLY, 777);
-	if (in_or_out == 1)
-		fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 777);
+	if (status == 0)
+		fd = open(file, O_RDONLY, 0777);
+	if (status == 1)
+		fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (fd == -1)
 		exit(0);
 	return (fd);
