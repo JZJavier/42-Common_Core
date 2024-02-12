@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:56:06 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/09 12:40:52 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/12 07:30:41 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_exit(int n_exit)
 {
 	if (n_exit == 1)
-		ft_putstr_fd("./pipex infile cmd cmd outfile\n", 2);
+		ft_putstr_fd("./pipex file1 cmd1 cmd2 file1\n", 2);
 	exit(0);
 }
 

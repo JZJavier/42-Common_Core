@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:52:46 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/09 12:40:49 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/12 07:01:37 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	here_doc_in(char **argv, int *fd)
 	close(fd[0]);
 	while (1)
 	{
-		ret = get_next_line_bonus(0);
+		ret = get_next_line(0);
 		if (ft_strncmp(ret, argv[2], ft_strlen(argv[2])) == 0)
 		{
 			free(ret);
