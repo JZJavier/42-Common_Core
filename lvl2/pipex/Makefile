@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 09:40:51 by jjuarez-          #+#    #+#              #
-#    Updated: 2024/02/09 11:26:54 by jjuarez-         ###   ########.fr        #
+#    Updated: 2024/02/12 12:03:41 by jjuarez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,14 @@ $(NAME) :
 
 all : $(NAME)
 
+clean :
+	$(RM) $(NAME)
+	make clean -C libft
+
 fclean : clean
 	$(RM) $(NAME)
 	make fclean -C libft
 
-clean :
-	$(RM) $(NAME)
-	make clean -C libft
 bonus: clean
 	make all -C libft
 	$(CC) $(CFLAGS) $(SRCS_BONUS) -o $(NAME)
