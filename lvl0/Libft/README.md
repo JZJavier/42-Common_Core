@@ -5,7 +5,7 @@ implementing and learning to use them. Your will create your own library. It wil
 helpful since you will use it in your next C school assignments.
 <br>
 
-### What is Libft?
+## What is Libft?
 
 There are 4 sections:
 1. **Functions from the Libc:** Some of the standard functions of C
@@ -15,7 +15,7 @@ There are 4 sections:
 
 <br>
 
-### List of functions
+## List of functions
 <br>
 
 Functions from the Libc | Adicional functtions | Bonus | Personal functions
@@ -42,5 +42,8 @@ ft_memcmp  | 	             |                 |
 ft_strnstr | 	             |                 | 
 ft_atoi    | 	             |                 | 
 
+## Grade
+<p align="center">
+<img width="210" alt="125" src="https://github.com/JZJavier/42/assets/76801285/9b5924a8-8876-4bce-b783-1e6b5da93252">
 
-
+</p>
