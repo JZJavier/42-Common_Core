@@ -44,3 +44,8 @@ For the ft_printf project of the 42 school cursus, we must recreate the famous C
         </tr>
     </tbody>
 </table>
+
+## Grade
+<p align="center">
+<img width="210" alt="100" src="https://github.com/JZJavier/42/assets/76801285/c82ce2c0-7889-440f-9db0-92e7a2cc7c89">
+</p>
