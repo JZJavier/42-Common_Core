@@ -25,22 +25,22 @@ ft_isdigit | ft_strjoin    | ft_lstadd_front | get_next_line_bonus
 ft_isalnum | ft_strtrim    | ft_lstsize      | ft_strlenchar
 ft_isascii | ft_split      | ft_lstlast      | ft_strcountchars
 ft_isprint | ft_itoa       | ft_lstadd_back  |
-ft_strlen  | ft_strmapi    | ft_lstdelone    | 
-ft_memset  |ft_putchar_fd  | ft_lstclear     | 
-ft_bzero   | ft_putstr_fd  | ft_lstiter      |    
-ft_memcpy  | ft_putendl_fd | ft_lstmap       | 
-ft_memmove | ft_putnbr_fd  |				         | 
-ft_strlcpy | ft_striteri   |			           | 
-ft_strlcat | 	             |                 | 
-ft_tolower | 	             |                 | 
-ft_toupper | 	             |                 | 
-ft_strchr  | 	             |                 | 
-ft_strrchr | 	             |                 | 
-ft_strncmp |               |                 |  
-ft_memchr  | 	             |                 | 
-ft_memcmp  | 	             |                 | 
-ft_strnstr | 	             |                 | 
-ft_atoi    | 	             |                 | 
+ft_strlen  | ft_strmapi    | ft_lstdelone    |
+ft_memset  |ft_putchar_fd  | ft_lstclear     |
+ft_bzero   | ft_putstr_fd  | ft_lstiter      |
+ft_memcpy  | ft_putendl_fd | ft_lstmap       |
+ft_memmove | ft_putnbr_fd  |                 |
+ft_strlcpy | ft_striteri   |                 |
+ft_strlcat |               |                 |
+ft_tolower |               |                 |
+ft_toupper |               |                 |
+ft_strchr  |               |                 |
+ft_strrchr |               |                 |
+ft_strncmp |               |                 |
+ft_memchr  |               |                 |
+ft_memcmp  |               |                 |
+ft_strnstr |               |                 |
+ft_atoi    |               |                 |
 
 ## Grade
 <p align="center">
