@@ -23,7 +23,7 @@ Functions from the Libc | Adicional functtions | Bonus | Personal functions
 ft_isalpha | ft_substr     | ft_lstnew       | ft_strcmp
 ft_isdigit | ft_strjoin    | ft_lstadd_front | get_next_line_bonus
 ft_isalnum | ft_strtrim    | ft_lstsize      | ft_strlenchar
-ft_isascii | ft_split      | ft_lstlast      | 
+ft_isascii | ft_split      | ft_lstlast      | ft_strcountchars
 ft_isprint | ft_itoa       | ft_lstadd_back  |
 ft_strlen  | ft_strmapi    | ft_lstdelone    | 
 ft_memset  |ft_putchar_fd  | ft_lstclear     | 
