@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:14:28 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/14 16:50:46 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/14 16:59:08 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
 //Funciones no solicitadas en la Libft
 int		ft_strcmp(char *s1, char *s2);
 char	*get_next_line(int fd);
-size_t	ft_strlenchar(const char *len, char c);
+size_t	ft_strchrlen(const char *len, char c);
 size_t	ft_strcountchars(const char *str, char c);
 
 #endif
