@@ -6,7 +6,7 @@
 #    By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 18:09:36 by jjuarez-          #+#    #+#              #
-#    Updated: 2024/02/14 16:59:22 by jjuarez-         ###   ########.fr        #
+#    Updated: 2024/02/16 17:54:59 by jjuarez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CC        = cc
 AR        = ar
 CFLAGS    = -Wall -Wextra -Werror
 ARFLAGS   = -rcs
+PRINTF    = ft_printf/libftprintf.a
 
 SOURCES   = ft_isalnum.c ft_isdigit.c ft_memcmp.c ft_putchar_fd.c ft_split.c ft_strjoin.c \
             ft_strmapi.c ft_strtrim.c ft_atoi.c ft_isalpha.c ft_isprint.c ft_memcpy.c \
@@ -29,14 +30,20 @@ BONUS = 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.
 OBJECTS = $(SOURCES:.c=.o) 
 BONUS_OBJS = $(BONUS:.c=.o)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(PRINTF)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
+
+$(PRINTF):
+	make -C ft_printf
 
 clean:
 	rm -f $(OBJECTS) $(BONUS_OBJS)
+	make clean -C ft_printf
 
 fclean: clean
 	rm -f $(NAME)
+	make fclean -C ft_printf
+
 all: ${NAME}
 
 re: fclean all
