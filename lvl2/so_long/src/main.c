@@ -37,15 +37,3 @@
 		return (1); //Ver si hay que mandar mensaje como por ejemplo falta el mapa o elija el mapa
 	return(0);
 }*/
-
-int main(int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		map_read(argv[1]);
-	}
-	else
-		perror("Error: ./so_long map: a valid path to the map is missing");
-	system("leaks -q so_long");
-	return(0);
-}
