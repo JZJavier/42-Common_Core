@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:14:28 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/14 16:59:08 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/18 17:36:33 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include "get_next_line_bonus.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:13:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/11 18:15:21 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/18 17:39:33 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin2(char *ch, char *s1, char *s2)
 	return (ch);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*ch;
 
@@ -54,7 +54,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ch);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
 	int	i;
 
