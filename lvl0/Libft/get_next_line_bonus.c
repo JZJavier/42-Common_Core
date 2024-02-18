@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:12:48 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/18 17:46:05 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:23:12 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_newline(char *str)
 		return (NULL);
 	}
 	i += (str[i] == '\n');
-	buf = (char *) malloc (ft_strlen(str) - i + 1);
+	buf = (char *) malloc (ft_strlen_gnl(str) - i + 1);
 	if (buf == NULL)
 		return (NULL);
 	j = 0;
