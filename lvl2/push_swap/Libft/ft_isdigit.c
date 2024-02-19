@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:53:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 18:01:05 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/08 16:27:24 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/10 17:14:41 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../Libft/libft.h"
-
-typedef struct s_stack
+int	ft_isdigit(int i)
 {
-	long			nbr;
-	long			index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+	if (i >= 48 && i <= 57)
+		return (1);
+	else
+		return (0);
+}
 
-#endif
+/*#include <stdio.h>
+
+int main (void)
+{
+	printf("%d",ft_isdigit(48));
+}*/

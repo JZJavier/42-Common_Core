@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:53:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 18:01:05 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/02/11 18:13:30 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/18 18:09:17 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-# include "../Libft/libft.h"
+# include <stddef.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-typedef struct s_stack
-{
-	long			nbr;
-	long			index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 200
+# endif
+
+// Main
+char	*get_next_line(int fd);
+
+// Utils
+size_t	ft_strlen_gnl(const char *len);
+char	*ft_strchr_gnl(char *s, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strjoin2(char *ch, char *s1, char *s2);
 
 #endif

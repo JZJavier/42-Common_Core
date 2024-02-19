@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:53:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 18:01:05 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/09 11:25:22 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/10 17:21:15 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../Libft/libft.h"
-
-typedef struct s_stack
+void	ft_bzero(void *s, size_t n)
 {
-	long			nbr;
-	long			index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+	unsigned char	*a;
+	size_t			i;
 
-#endif
+	i = 0;
+	a = (unsigned char *) s;
+	while (i < n)
+		a[i++] = 0;
+}
+
+/*int main(void)
+{
+	char pal[] = "illooo oo";
+	ft_bzero(pal, 3);
+	return (0);
+}*/

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strcountcharslen.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:53:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 18:01:05 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/18 23:33:07 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../Libft/libft.h"
-
-typedef struct s_stack
+size_t	ft_strcountchars(const char *str, char c)
 {
-	long			nbr;
-	long			index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+	int	i;
+	int	ch;
 
-#endif
+	i = 0;
+	ch = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			ch++;
+		i++;
+	}
+	return (ch);
+}
