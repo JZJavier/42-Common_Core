@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 12:47:56 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/11 13:13:38 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/12 11:07:48 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/01/21 13:11:47 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mlx/mlx.h"
-#include "so_long.h"
+#include "ft_printf.h"
 
+void	ft_putstr(char *s, int *len)
+{
+	int	i;
 
+	i = 0;
+	if (!s)
+		s = "(null)";
+	while (s[i] != '\0')
+	{
+		write (1, &s[i], 1);
+		i++;
+		(*len)++;
+	}
+}

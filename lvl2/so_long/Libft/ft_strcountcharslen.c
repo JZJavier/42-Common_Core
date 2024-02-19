@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ft_strcountchars.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 13:11:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 00:09:41 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/14 16:50:28 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "libft.h"
 
-int	ft_error(char *error, t_map *map)
-{
-	ft_printf("%s%s", error);
-	if (map->status == 1)
-		free_matrice(map);
-	exit(EXIT_FAILURE);
-}
-
-void	free_matrice(t_map *map)
+size_t	ft_strcountchars(const char *str, char c)
 {
 	int	i;
+	int	ch;
 
 	i = 0;
-	if (map->matrice)
+	ch = 0;
+	while (str[i] != '\0')
 	{
-		while (map->matrice[i])
-		{
-			free(map->matrice[i]);
-			i++;
-		}
-		free(map->matrice);
+		if (str[i] == c)
+			ch++;
+		i++;
 	}
+	return (ch);
 }

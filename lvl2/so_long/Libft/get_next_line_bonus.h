@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 13:11:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 00:09:41 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/02/11 18:13:30 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/18 18:09:17 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-int	ft_error(char *error, t_map *map)
-{
-	ft_printf("%s%s", error);
-	if (map->status == 1)
-		free_matrice(map);
-	exit(EXIT_FAILURE);
-}
+# include <stddef.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-void	free_matrice(t_map *map)
-{
-	int	i;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 200
+# endif
 
-	i = 0;
-	if (map->matrice)
-	{
-		while (map->matrice[i])
-		{
-			free(map->matrice[i]);
-			i++;
-		}
-		free(map->matrice);
-	}
-}
+// Main
+char	*get_next_line(int fd);
+
+// Utils
+size_t	ft_strlen_gnl(const char *len);
+char	*ft_strchr_gnl(char *s, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strjoin2(char *ch, char *s1, char *s2);
+
+#endif
