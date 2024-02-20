@@ -6,7 +6,13 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:53:43 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 15:53:44 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:22:38 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/push_swap.h"
+
+void	sa(t_stack **a, int print);
+{
+	
+}
