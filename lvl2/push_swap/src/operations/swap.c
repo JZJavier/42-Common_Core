@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 08:36:56 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/22 08:53:56 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/22 08:54:08 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	sa(t_list **stack_a)
+int	swap(t_list **stack)
 {
-	if (swap(stack_a) == -1)
+	t_list	*head;
+	t_list	*next;
+	int		tmp_val;
+	int		tmp_index;
+
+	if (ft_lstsize(*stack) < 2)
 		return (-1);
-	ft_putendl_fd("sa", 1);
+	head = *stack;
+	next = head->next;
+	if (!head && !next)
+		ft_error();
+	tmp_val = head->value;
+	tmp_index = head->index;
+	head->value = next->value;
+	head->index = next->index;
+	next->value = tmp_val;
+	next->index = tmp_index;
 	return (0);
 }

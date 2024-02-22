@@ -5,18 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:54:09 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/20 06:49:17 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/02/22 08:36:47 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/22 08:36:50 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
-//Este main simplemente inicializa stack a y stack b
-//Lo uso solo para probar que las operaciones vayan bien
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack	a;
+	t_list	**stack_a;
+	t_list	**stack_b;
 
-	
+	if (argc < 2)
+		return (-1);
+	ft_check_args(argc, argv);
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	stack_b = (t_list **)malloc(sizeof(t_list));
+	*stack_a = NULL;
+	*stack_b = NULL;
+	ft_create_stack(stack_a, argc, argv);
+	if (ft_check_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
+	}
+	if (ft_lstsize(*stack_a) <= 5)
+		simple_sort(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (0);
 }

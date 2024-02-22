@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:53:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/20 06:48:53 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/02/22 08:36:56 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/22 08:53:49 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../includes/push_swap.h"
 
-# include "../Libft/libft.h"
-
-typedef struct s_stack
+int	rrb(t_list **stack_b)
 {
-	long			nbr;
-	long			index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
-
-typedef t_stack*	t_head; //Nose si esto es necesario
-typedef t_stack*	t_tail; //Nose si esto es necesario
-
-//Operations
-void	sa(t_stack **a, int print);
-
-#endif
+	if (reverserotate(stack_b) == -1)
+		return (-1);
+	ft_putendl_fd("rrb", 1);
+	return (0);
+}

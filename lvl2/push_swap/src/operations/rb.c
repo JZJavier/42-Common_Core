@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 08:36:56 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/22 08:53:56 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/22 08:53:34 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	sa(t_list **stack_a)
+int	rb(t_list **stack_b)
 {
-	if (swap(stack_a) == -1)
+	if (rotate(stack_b) == -1)
 		return (-1);
-	ft_putendl_fd("sa", 1);
+	ft_putendl_fd("rb", 1);
 	return (0);
 }

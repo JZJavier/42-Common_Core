@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   get_distance.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 08:36:56 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/22 08:53:56 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/02/22 08:01:04 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/22 08:24:23 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-int	sa(t_list **stack_a)
+int	get_distance(t_list **stack, int index)
 {
-	if (swap(stack_a) == -1)
-		return (-1);
-	ft_putendl_fd("sa", 1);
-	return (0);
+	t_list	*head;
+	int		distance;
+
+	distance = 0;
+	head = *stack;
+	while (head)
+	{
+		if (head->index == index)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
 }

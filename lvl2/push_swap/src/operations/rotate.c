@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 08:36:56 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/22 08:53:56 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/22 08:53:38 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	sa(t_list **stack_a)
+int	rotate(t_list **stack)
 {
-	if (swap(stack_a) == -1)
+	t_list	*head;
+	t_list	*tail;
+
+	if (ft_lstsize(*stack) < 2)
 		return (-1);
-	ft_putendl_fd("sa", 1);
+	head = *stack;
+	tail = ft_lstlast(head);
+	*stack = head->next;
+	head->next = NULL;
+	tail->next = head;
 	return (0);
 }
