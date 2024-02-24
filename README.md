@@ -8,7 +8,8 @@
   Kick off: January 2024
 </p>
 <p align="center">
-  <img width="500" alt="cursus" src="https://github.com/JZJavier/42/assets/76801285/7d721b9b-958c-4b30-83f8-3d26c4ca6d91">
+  <img width="500" alt="cursus" src="https://github.com/JZJavier/42/assets/76801285/5b2d8404-adef-4135-a6c2-71d92510b412">
+
 </p>
 
 ## Finished Projects
@@ -23,4 +24,4 @@
 | 6 | pipex | 2 | *This project will let you discover in detail the pipe, a UNIX mechanism* | C, Makefile, Pipe, Fork | 125/100 | February 2024 | <a href="https://github.com/JZJavier/42/tree/main/lvl2/pipex"><picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/40824677/205689834-f6b698a0-844d-46c2-8cca-2051cd3a9ef0.png"><img alt="GitHub Logo in Light or Dark." src="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"></picture></a><br/> |
 | 7 | so_long | 2 | *This project is a very small 2D game.* | C, Makefile, Graphic Management | 125/100 | February 2024 | <a href="https://github.com/JZJavier/42/tree/main/lvl2/so_long"><picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/40824677/205689834-f6b698a0-844d-46c2-8cca-2051cd3a9ef0.png"><img alt="GitHub Logo in Light or Dark." src="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"></picture></a><br/> |
 | 8 | push_swap | 2 | *This project will make you sort data on a stack.* | C, Makefile, Algorithms | 82/100 | February 2024 | <a href="https://github.com/JZJavier/42/tree/main/lvl2/push_swap"><picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/40824677/205689834-f6b698a0-844d-46c2-8cca-2051cd3a9ef0.png"><img alt="GitHub Logo in Light or Dark." src="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"></picture></a><br/> |
-
+| 9 | Exam_Rank_03 | 2 | *get_next_line or ft_printf* | C, Reading, Print | 100/100 | February 2024 |
