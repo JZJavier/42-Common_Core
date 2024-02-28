@@ -24,62 +24,24 @@ it that can't be executed won't.
 ## My algorithm
 In computer science, radix sort is a sorting algorithm that sorts integers by processing their digits individually. Since integers can represent character strings (e.g. names or dates) and, especially, specially formatted floating-point numbers, radix sort is not limited to integers only.
 
-Original vector:
+Original vector: 25 57 48 37 12 92 86 33
 </br>
-25 57 48 37 12 92 86 33
 
-We assign the elements into queues based on the least significant digit of each element.
-</br>
-0:
-</br>
-1:
-</br>
-2: 12 92
-</br>
-3:33
-</br>
-4:
-</br>
-5:25
-</br>
-6:86
-</br>
-7:57 37
-</br>
-8:48
-</br>
-9:
-</br>
-After the first pass, the sorting remains:
-</br>
-12 92 33 25 86 57 37 48
+| Digit | First sort |  ->  | Digit | Second sort |
+|-------|------------|------|-------|-------------|
+| 0:    |            |  ->  | 0:    |             |
+| 1:    |            |  ->  | 1:    | 12          |
+| 2:    | 12 92      |  ->  | 2:    | 25          |
+| 3:    | 33         |  ->  | 3:    | 33 37       |
+| 4:    |            |  ->  | 4:    | 48          |
+| 5:    | 25         |  ->  | 5:    | 57          |
+| 6:    | 86         |  ->  | 6:    |             |
+| 7:    | 57 37      |  ->  | 7:    |             |
+| 8:    | 48         |  ->  | 8:    | 86          |
+| 9:    |            |  ->  | 9:    | 92          |
 
-Queues based on the most significant digit.
-</br>
-0:
-</br>
-1:12
-</br>
-2:25
-</br>
-3:33 37
-</br>
-4:48
-</br>
-5:57
-</br>
-6:
-</br>
-7:
-</br>
-8:86
-</br>
-9:92
-</br>
-Ordered list:
-</br>
-12 25 33 37 48 57 86 92
-</br>
+Ordered list:12 25 33 37 48 57 86 92
+
 ## Grade
 <p align="center">
   <img width="206" alt="82" src="https://github.com/JZJavier/42/assets/76801285/d9d9f3ae-59b5-4725-89ab-39e6bcdd7539">
