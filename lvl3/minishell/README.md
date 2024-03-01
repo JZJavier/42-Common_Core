@@ -1,6 +1,2 @@
----
-description: This project is about creating a simple shell.
----
-
 # Minishell
 
