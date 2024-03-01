@@ -1,6 +1,2 @@
----
-description: Function description
----
-
 # Minishell
 
