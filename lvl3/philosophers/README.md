@@ -1,0 +1,3 @@
+### Philosophers
+
+## Dining philosophers problem
