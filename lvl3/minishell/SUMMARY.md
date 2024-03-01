@@ -1,6 +1,7 @@
 # Table of contents
 
-## Use headings to create page groups like this one​
-
 * [Minishell](README.md)
-    * [Functions](FUNCTIONS.md)
+
+## Functions
+
+* [Page 1](functions/page-1.md)
