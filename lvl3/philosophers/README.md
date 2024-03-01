@@ -28,7 +28,7 @@ Example of a command-line argument: 2 410 200 200 7
 | 2        | Time to die                         |
 | 3        | Time to eat                         |
 | 4        | Time to sleep                       |
-| 5        | Number meals per philosopher        |
+| 5        | Number of meals per philosopher     |
 </div>
 
 ## Grade
