@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 21:58:02 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/29 22:33:32 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:29:23 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_free(t_philo *philos, int nbr);
 int		init_philos(t_philo *philos, char **av, int ac, int *end);
 int		init_philos2(t_philo *philos, char **av);
 void	init_ends(t_philo *philos, int *total_meals, pthread_mutex_t *end_m);
-int		init_pinit_threadshilos(pthread_t *th, int nbr, t_philo *philos);
+int		init_threads(pthread_t *th, int nbr, t_philo *philos);
 
 //Main
 int		main(int argc, char **argv);

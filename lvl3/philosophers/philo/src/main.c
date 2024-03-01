@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 21:57:51 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/29 22:48:06 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:29:23 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 		return (philo_end(philos, NULL, ft_atoi(argv[1])));
 	init_ends(philos, &total_meals, &end_mutex);
 	threads = malloc(ft_atoi(argv[1]) * sizeof(pthread_t));
-	if (!threads || init_pinit_threadshilos(threads, ft_atoi(argv[1]), philos))
+	if (!threads || init_threads(threads, ft_atoi(argv[1]), philos))
 		return (philo_end(philos, threads, ft_atoi(argv[1])));
 	return (philo_end(philos, threads, ft_atoi(argv[1])));
 }
