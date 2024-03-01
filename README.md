@@ -8,7 +8,7 @@
   Kick off: January 2024
 </p>
 <p align="center">
-  <img width="500" alt="cursus" src="https://github.com/JZJavier/42/assets/76801285/5b2d8404-adef-4135-a6c2-71d92510b412">
+  <img width="500" alt="cursus" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/f2da7af3-a133-4455-a241-cc93ab67a0d8">
 </p>
 
 ## Finished Projects
