@@ -9,7 +9,6 @@
 </p>
 <p align="center">
   <img width="500" alt="cursus" src="https://github.com/JZJavier/42/assets/76801285/5b2d8404-adef-4135-a6c2-71d92510b412">
-
 </p>
 
 ## Finished Projects
