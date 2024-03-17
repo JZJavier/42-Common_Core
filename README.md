@@ -8,7 +8,7 @@
   Kick off: January 2024
 </p>
 <p align="center">
-  <img width="500" alt="cursus" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/f2da7af3-a133-4455-a241-cc93ab67a0d8">
+  <img width="500" alt="HolyGraph" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/8a19c2d4-f0e1-4a64-b958-57111da28ec5">
 </p>
 
 ## Finished Projects
@@ -25,3 +25,4 @@
 | 8 | push_swap | 2 | *This project will make you sort data on a stack.* | C, Makefile, Algorithms | 82/100 | February 2024 | <a href="https://github.com/JZJavier/42-Common_Core/tree/main/lvl2/push_swap"><picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/40824677/205689834-f6b698a0-844d-46c2-8cca-2051cd3a9ef0.png"><img alt="GitHub Logo in Light or Dark." src="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"></picture></a><br/> |
 | 9 | Exam_Rank_03 | 2 | *get_next_line or ft_printf* | C, Reading, Print | 100/100 | February 2024 |
 | 10 | philosophers | 3 | *In this project, you will learn the basics of threading a process.* | C, Makefile, Threads, Mutex| 100/100 | March 2024 | <a href="https://github.com/JZJavier/42-Common_Core/tree/main/lvl3/philosophers"><picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/40824677/205689834-f6b698a0-844d-46c2-8cca-2051cd3a9ef0.png"><img alt="GitHub Logo in Light or Dark." src="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"></picture></a><br/> |
+| 11 | minishell | 3 | *This project is about creating a simple shell.* | C, Processes, File Descriptors| 101/100 | March 2024 | <a href="https://github.com/JZJavier/42-Common_Core/tree/main/lvl3/minishell"><picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/40824677/205689834-f6b698a0-844d-46c2-8cca-2051cd3a9ef0.png"><img alt="GitHub Logo in Light or Dark." src="https://user-images.githubusercontent.com/40824677/205689829-11cbb3fd-d452-4846-a799-0be90146192e.png"></picture></a><br/> |
