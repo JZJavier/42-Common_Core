@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 21:55:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 00:17:43 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:28:48 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define RIGHT 2
 # define UP 13
 # define ESC 53
+# define CROSS 17
 # define FILESIZE 40960
 
 # define PLAYER "./sprites/Player.xpm"
@@ -61,6 +62,7 @@ typedef struct s_map
 //Main.c
 int		main(int argc, char *argv[]);
 void	init_struct(t_map *map);
+int		close_win(void);
 
 // Map_init
 char	*map_one_str(char	*filename);

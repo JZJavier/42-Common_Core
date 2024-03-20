@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 22:00:47 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 00:38:49 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:42:21 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	check_and_free(t_map *map)
 	}
 	free(map->matrice_copy);
 	if (map->collectible_copy != 0 || map->exit != 1)
-		ft_error("Error:There is no valid path!\n", map);
+		exit (2);
 }
 
 void	count_collectible(t_map *map)

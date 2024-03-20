@@ -6,11 +6,17 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:15:31 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/19 00:39:04 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:32:59 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long_bonus.h"
+
+int	close_win(void)
+{
+	exit(2);
+	return (2);
+}
 
 void	init_struct(t_map *map)
 {
@@ -39,6 +45,7 @@ int	main(int argc, char *argv[])
 			open_window(&map);
 			print_map(&map);
 			mlx_key_hook(map.win_ptr, detect_key, &map);
+			mlx_hook(map.win_ptr, 17, 0, close_win, NULL);
 			mlx_loop(map.mlx_ptr);
 		}
 	}
