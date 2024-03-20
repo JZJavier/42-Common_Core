@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:56:47 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/20 14:28:58 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:46:41 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ void	move_player(t_map *map, int y, int x)
 	new_x = map->position_x + x;
 	if (map->matrice[new_y][new_x] == 'C')
 		map->collectible--;
+	else if (map->matrice[new_y][new_x] == 'E' && map->collectible == 0)
+	{
+		ft_printf("\n%s", "You won!!!!");
+		exit(0);
+	}
 	if (map->matrice[new_y][new_x] != '1' && map->matrice[new_y][new_x] != 'E')
 	{
 		map->matrice[map->position_y][map->position_x] = '0';
@@ -31,20 +36,6 @@ void	move_player(t_map *map, int y, int x)
 		ft_printf("\n%d", map->moves);
 		print_map(map);
 	}
-}
-
-int	check_win_condition(t_map *map)
-{
-	if (map->collectible == 0
-		&& ((map->matrice[map->position_y][map->position_x + 1] == 'E')
-		|| (map->matrice[map->position_y + 1][map->position_x] == 'E') ||
-		(map->matrice[map->position_y][map->position_x - 1] == 'E') ||
-		(map->matrice[map->position_y - 1][map->position_x] == 'E')))
-	{
-		ft_printf("\n%s", "You won!!!!");
-		exit(0);
-	}
-	return (0);
 }
 
 int	handle_movement(int key, t_map *map)
@@ -64,7 +55,6 @@ int	detect_key(int key, t_map *map)
 {
 	if (key == ESC)
 		exit(0);
-	check_win_condition(map);
 	handle_movement(key, map);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 22:00:59 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/20 14:28:54 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:45:48 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,6 @@ int		ft_error(char *error, t_map *map);
 void	print_moves_screen(t_map *map);
 int		detect_key(int key, t_map *map);
 int		handle_movement(int key, t_map *map);
-int		check_win_condition(t_map *map);
 void	move_player(t_map *map, int y, int x);
 
 #endif
