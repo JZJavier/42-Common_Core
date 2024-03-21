@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:12:48 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/12 07:04:21 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:23:12 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_newline(char *str)
 		return (NULL);
 	}
 	i += (str[i] == '\n');
-	buf = (char *) malloc (ft_strlen(str) - i + 1);
+	buf = (char *) malloc (ft_strlen_gnl(str) - i + 1);
 	if (buf == NULL)
 		return (NULL);
 	j = 0;
@@ -88,7 +88,7 @@ char	*get_next_line(int fd)
 	buf = (char *) malloc(BUFFER_SIZE + 1);
 	if (buf == NULL)
 		return (NULL);
-	while (!(ft_strchr(schar[fd], '\n')) && bytes != 0)
+	while (!(ft_strchr_gnl(schar[fd], '\n')) && bytes != 0)
 	{
 		bytes = read(fd, buf, BUFFER_SIZE);
 		if (bytes == -1)
@@ -97,7 +97,7 @@ char	*get_next_line(int fd)
 			return (NULL);
 		}
 		buf[bytes] = '\0';
-		schar[fd] = ft_strjoin(schar[fd], buf);
+		schar[fd] = ft_strjoin_gnl(schar[fd], buf);
 	}
 	free(buf);
 	buf = ft_trim(schar[fd]);

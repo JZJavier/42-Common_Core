@@ -3,103 +3,100 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjuarez- <jjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: javgao <yugao@student.42madrid.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:30 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/01/12 18:03:10 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/03 20:14:02 by javgao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	countword(const char *str, char c)
+static char	*str_cpy(const char *allstr, int initp, int endp);
+static int	is_sep(char *strsep, char c);
+static char	**ele_count(char *str, char *sep);
+
+char	**ft_split(char *str, char *charset)
 {
-	size_t	len;
+	char	**fin;
+	int		head;
+	int		index;
+	int		tamano;
 
-	len = 0;
-	while (*str != c && *str)
+	index = 0;
+	tamano = 0;
+	fin = ele_count (str, charset);
+	while (str [index])
 	{
-		str++;
-		len++;
-	}
-	return (len);
-}
-
-static size_t	countdel(const char *str, char c)
-{
-	size_t	i;
-	size_t	count;
-
-	i = 0;
-	count = 0;
-	while (str[i] != '\0')
-	{
-		while (str[i] == c && str[i])
-			i++;
-		while (str[i] != c && str[i])
-			i++;
-		count++;
-	}
-	if (i > 0 && str[i - 1] == c)
-		count--;
-	return (count);
-}
-
-static char	**ffree(char **str, size_t count)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < count)
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-	return (NULL);
-}
-
-static char	**createarr(char **arr, const char *s, char c)
-{
-	size_t	j;
-	size_t	k;
-
-	j = 0;
-	while (*s != '\0')
-	{
-		while (*s == c && *s != '\0')
-			s++;
-		if (*s == '\0')
-			continue ;
-		arr[j] = malloc(sizeof(char) * countword(s, c) + 1);
-		if (arr[j] == NULL)
-			return (ffree(arr, j));
-		k = 0;
-		while (*s != c && *s != '\0')
+		if (!is_sep(charset, str[index]))
 		{
-			arr[j][k] = *s;
-			k++;
-			s++;
+			head = index;
+			while (!is_sep(charset, str[index]) && str[index])
+				index ++;
+			fin[tamano] = str_cpy (str, head, index);
+			tamano ++;
 		}
-		arr[j][k] = '\0';
-		j++;
+		else
+			index ++;
 	}
-	arr[j] = NULL;
-	return (arr);
+	return (fin);
 }
 
-char	**ft_split(const char *s, char c)
+static char	*str_cpy(const char *allstr, int initp, int endp)
 {
-	char	**arr;
+	char	*fin;
+	int		index;
 
-	if (s == NULL)
-		return (NULL);
-	arr = malloc(sizeof(char *) * (countdel(s, c) + 1));
-	if (arr == NULL)
-		return (NULL);
-	arr = createarr(arr, s, c);
-	return (arr);
+	index = 0;
+	fin = (char *) malloc (sizeof (char) * (endp - initp + 1));
+	while (initp + index < endp)
+	{
+		fin[index] = allstr[initp + index];
+		index ++;
+	}
+	fin[index] = '\0';
+	return (fin);
+}
+
+static int	is_sep(char *strsep, char c)
+{
+	int	index;
+
+	index = 0;
+	while (c != '\0' && strsep[index])
+	{
+		if (c == strsep[index])
+			return (TRUE);
+		index ++;
+	}
+	return (FALSE);
+}
+
+char	**ele_count(char *str, char *sep)
+{
+	int		count;
+	int		index;
+	char	**final;
+
+	count = 0;
+	index = 0;
+	if (!str || !*str)
+	{
+		final = (char **)malloc(sizeof(char *));
+		final[0] = NULL;
+		return (final);
+	}
+	while (str[index])
+	{
+		if (!is_sep(sep, str[index]))
+			if (index == 0 || is_sep(sep, str[index - 1]))
+				count++;
+		index ++;
+	}
+	final = (char **)malloc(sizeof(char *) * (count + 1));
+	final[count] = NULL;
+	return (final);
 }
 
 /*#include <stdio.h>

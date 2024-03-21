@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:14:28 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/11 19:17:13 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/19 13:35:35 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include "get_next_line_bonus.h"
+# include "ft_printf/ft_printf.h"
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_list
 {
@@ -49,7 +53,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char *str, char *charset);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -72,5 +76,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
 //Funciones no solicitadas en la Libft
 int		ft_strcmp(char *s1, char *s2);
 char	*get_next_line(int fd);
+size_t	ft_strchrlen(const char *len, char c);
+size_t	ft_strcountchars(const char *str, char c);
+size_t	ft_strcountcharslen(const char *str, char c, int len);
 
 #endif

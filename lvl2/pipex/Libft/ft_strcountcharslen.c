@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   ft_strcountcharslen.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 18:13:30 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/18 18:09:17 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/02/18 23:33:07 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#include "libft.h"
 
-# include <stddef.h>
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strcountchars(const char *str, char c)
+{
+	int	i;
+	int	ch;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 200
-# endif
-
-// Main
-char	*get_next_line(int fd);
-
-// Utils
-size_t	ft_strlen_gnl(const char *len);
-char	*ft_strchr_gnl(char *s, int c);
-char	*ft_strjoin_gnl(char *s1, char *s2);
-char	*ft_strjoin2(char *ch, char *s1, char *s2);
-
-#endif
+	i = 0;
+	ch = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			ch++;
+		i++;
+	}
+	return (ch);
+}

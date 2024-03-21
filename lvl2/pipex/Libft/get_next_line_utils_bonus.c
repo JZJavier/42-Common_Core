@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:13:39 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/12 07:03:55 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:09:40 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin2(char *ch, char *s1, char *s2)
 	return (ch);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*ch;
 
@@ -46,7 +46,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	ch = (char *) malloc (ft_strlen(s1) + ft_strlen(s2) + 1);
+	ch = (char *) malloc (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1);
 	if (ch == NULL)
 		return (NULL);
 	ch = ft_strjoin2(ch, s1, s2);
@@ -54,7 +54,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ch);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
 	int	i;
 
@@ -73,7 +73,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-size_t	ft_strlen(const char *len)
+size_t	ft_strlen_gnl(const char *len)
 {
 	int	i;
 
