@@ -23,5 +23,5 @@ it that can't be executed won't.
 
 ## Grade
 <p align="center">
-  <img width="206" alt="82" src="https://github.com/JZJavier/42/assets/76801285/d9d9f3ae-59b5-4725-89ab-39e6bcdd7539">
+<img width="210" alt="100" src="https://github.com/JZJavier/42/assets/76801285/c82ce2c0-7889-440f-9db0-92e7a2cc7c89">
 </p>
