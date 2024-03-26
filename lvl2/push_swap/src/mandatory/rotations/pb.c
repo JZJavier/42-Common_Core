@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchrlen.c                                     :+:      :+:    :+:   */
+/*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:13:09 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/03/26 12:58:31 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/03/26 12:59:04 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/push_swap.h"
 
-size_t	ft_strchrlen(const char *len, char c)
+void	pb(t_stack **b, t_stack **a, bool checker)
 {
-	int	i;
-
-	i = 0;
-	while (len[i] != c && len[i] != '\0')
-		i++;
-	return (i);
+	push(b, a);
+	if (!checker)
+		write(1, "pb\n", 3);
 }

@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchrlen.c                                     :+:      :+:    :+:   */
+/*   ft_isnum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:13:09 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/03/25 16:47:19 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/03/25 16:49:24 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strchrlen(const char *len, char c)
+int	string_isnum(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (len[i] != c && len[i] != '\0')
-		i++;
-	return (i);
+	while (str[i])
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (1);
+	}
+	return (0);
 }

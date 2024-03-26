@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:14:28 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/22 06:35:23 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/26 13:09:56 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <stddef.h>
 # include "get_next_line_bonus.h"
 # include "ft_printf/ft_printf.h"
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isalpha(int i);
 int		ft_isdigit(int i);
@@ -60,5 +66,7 @@ char	*get_next_line(int fd);
 size_t	ft_strchrlen(const char *len, char c);
 size_t	ft_strcountchars(const char *str, char c);
 size_t	ft_strcountcharslen(const char *str, char c, int len);
+long	ft_atol(const char *str);
+int		string_isnum(char *str);
 
 #endif

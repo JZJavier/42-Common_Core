@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchrlen.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:13:09 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/03/25 10:15:49 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/03/26 18:53:58 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/push_swap.h"
 
-size_t	ft_strchrlen(const char *len, char c)
+int	main(int argc, char **argv)
 {
-	int	i;
+	t_stack	*a;
+	t_stack	*b;
 
-	i = 0;
-	while (len[i] != c && len[i] != '\0')
-		i++;
-	return (i);
+	a = NULL;
+	b = NULL;
+	argv = parse(argc, argv);
+	init_node(&a, argv + 1);
+	if (!is_sorted(a))
+	{
+		if (ft_listsize(a) == 2)
+			sa(&a, false);
+		else if (ft_listsize(a) == 3)
+			sort_3(&a);
+		else
+			push_swap(&a, &b);
+	}
+	ft_lstclear(&a);
+	return (0);
 }

@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchrlen.c                                     :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:13:09 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/03/26 12:56:15 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/03/26 17:55:12 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/push_swap.h"
 
-size_t	ft_strchrlen(const char *len, char c)
+void	push(t_stack **dest, t_stack **src)
 {
-	int	i;
+	t_stack	*node;
 
-	i = 0;
-	while (len[i] != c && len[i] != '\0')
-		i++;
-	return (i);
+	if (*src == NULL)
+		return ;
+	node = *src;
+	*src = (*src)->next;
+	if (*src != NULL)
+		(*src)->prev = NULL;
+	node->prev = NULL;
+	if (*dest == NULL)
+	{
+		*dest = node;
+		node->next = NULL;
+	}
+	else
+	{
+		node->next = *dest;
+		node->next->prev = node;
+		*dest = node;
+	}
 }

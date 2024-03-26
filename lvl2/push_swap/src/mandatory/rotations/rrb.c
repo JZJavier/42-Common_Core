@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchrlen.c                                     :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 08:05:37 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:13:09 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/03/26 13:15:53 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/03/26 13:23:05 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/push_swap.h"
 
-size_t	ft_strchrlen(const char *len, char c)
+void	rrb(t_stack **b, bool checker)
 {
-	int	i;
-
-	i = 0;
-	while (len[i] != c && len[i] != '\0')
-		i++;
-	return (i);
+	reverse_rotate(b);
+	if (!checker)
+		write(1, "rrb\n", 4);
 }
