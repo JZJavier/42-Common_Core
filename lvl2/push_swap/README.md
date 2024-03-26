@@ -21,27 +21,6 @@ it that can't be executed won't.
 | `rrb` | reverse rotate b                    | shifts all elements of stack b from top to bottom      |
 | `rrr` | reverse rotate a + reverse rotate b | both `rra` and `rrb`                                   |
 
-## My algorithm
-In computer science, radix sort is a sorting algorithm that sorts integers by processing their digits individually. Since integers can represent character strings (e.g. names or dates) and, especially, specially formatted floating-point numbers, radix sort is not limited to integers only.
-
-Original vector: 25 57 48 37 12 92 86 33
-</br>
-
-| Digit | First sort |  ->  | Digit | Second sort |
-|-------|------------|------|-------|-------------|
-| 0:    |            |  ->  | 0:    |             |
-| 1:    |            |  ->  | 1:    | 12          |
-| 2:    | 12 92      |  ->  | 2:    | 25          |
-| 3:    | 33         |  ->  | 3:    | 33 37       |
-| 4:    |            |  ->  | 4:    | 48          |
-| 5:    | 25         |  ->  | 5:    | 57          |
-| 6:    | 86         |  ->  | 6:    |             |
-| 7:    | 57 37      |  ->  | 7:    |             |
-| 8:    | 48         |  ->  | 8:    | 86          |
-| 9:    |            |  ->  | 9:    | 92          |
-
-Ordered list:12 25 33 37 48 57 86 92
-
 ## Grade
 <p align="center">
   <img width="206" alt="82" src="https://github.com/JZJavier/42/assets/76801285/d9d9f3ae-59b5-4725-89ab-39e6bcdd7539">
