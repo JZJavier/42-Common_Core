@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 19:47:46 by utente            #+#    #+#             */
-/*   Updated: 2024/03/26 18:50:53 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/29 00:30:24 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (1 == argc)
 		return (0);
-	else if (2 == argc)
-		argv = ft_split(argv[1], ' ');
 	argv = parse(argc, argv);
 	init_node(&a, argv + 1);
 	len = ft_listsize(a);
