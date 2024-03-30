@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end.c                                              :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 22:10:17 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/29 15:58:01 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/03/29 13:09:50 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/03/29 13:29:12 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/philosophers.h"
+#include "../philosophers.h"
 
-int	philo_end(t_philo *philos, pthread_t *threads, int nbr)
+long	ft_atol(const char *str)
 {
-	int	i;
+	int		i;
+	long	num;
+	int		sign;
 
 	i = 0;
-	pthread_mutex_destroy(philos[0].end_m);
-	if (threads)
+	num = 0;
+	sign = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		while (i < nbr)
-		{
-			pthread_join(threads[i], NULL);
+		if (str[i] == '-')
+			sign = sign -2;
+		if (!(str[i + 1] >= 48 && str[i + 1] <= 57))
+			return (0);
+		else
 			i++;
-		}
-		free(threads);
 	}
-	if (philos)
-		ft_free(philos, nbr);
-	return (1);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		num = num * 10 + str[i] - 48;
+		i++;
+	}
+	return (num * sign);
 }

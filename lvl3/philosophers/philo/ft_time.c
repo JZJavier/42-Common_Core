@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   total_meals.c                                      :+:      :+:    :+:   */
+/*   ft_time.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 21:58:56 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/02/29 17:42:02 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/03/30 18:47:40 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/03/30 21:38:54 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/philosophers.h"
+#include "philosophers.h"
 
-void	philo_total_meals(t_philo *philo)
+unsigned long long	ft_time(void)
 {
-	if (philo->philo_total_meals < 0)
-		return ;
-	if (!philo->philo_total_meals)
-		*philo->total_meals += 1;
-	if (*philo->total_meals == philo->philo_num)
-		*philo->end = 1;
+	struct timeval	tv;
+
+	gettimeofday(&tv, NULL);
+	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
