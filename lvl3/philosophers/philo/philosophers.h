@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:46:56 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/30 21:51:34 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/31 21:20:26 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct t_simulation
 	pthread_mutex_t		forks[MAX_PHILOS];
 	pthread_mutex_t		print_mutex;
 	pthread_mutex_t		dead_mutex;
+	pthread_mutex_t		eat_mutex;
 }	t_simulation;
 
 int					parse(char **argv);

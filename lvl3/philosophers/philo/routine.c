@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:49:13 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/30 22:00:45 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/31 21:32:28 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,18 @@ void	*eat_monitor(void *arg)
 	int				i;
 
 	simulation = (t_simulation *)arg;
-	total_eats = simulation->philosopher_count * simulation->eat_count;
 	total_eaten = 0;
+	total_eats = simulation->philosopher_count * simulation->eat_count;
 	while (total_eaten < total_eats)
 	{
-		usleep(100);
+		usleep(1000);
 		total_eaten = 0;
 		i = 0;
 		while (i < simulation->philosopher_count)
 		{
+			pthread_mutex_lock(&simulation->eat_mutex);
 			total_eaten += simulation->philosophers[i].eat_count;
+			pthread_mutex_unlock(&simulation->eat_mutex);
 			i++;
 		}
 	}
@@ -83,10 +85,14 @@ void	eat(t_philo *philo)
 	pthread_mutex_lock(&philo->simulation->forks[philo->right_fork]);
 	write_message(philo, FORK);
 	philo->last_eat_time = ft_time();
+	pthread_mutex_lock(&philo->action_mutex);
 	philo->lifetime = philo->last_eat_time + philo->simulation->time_to_die;
+	pthread_mutex_unlock(&philo->action_mutex);
 	write_message(philo, EAT);
 	usleep(philo->simulation->time_to_eat * 1000);
+	pthread_mutex_lock(&philo->simulation->eat_mutex);
 	philo->eat_count++;
+	pthread_mutex_unlock(&philo->simulation->eat_mutex);
 	pthread_mutex_unlock(&philo->simulation->forks[philo->left_fork]);
 	pthread_mutex_unlock(&philo->simulation->forks[philo->right_fork]);
 	write_message(philo, SLEEP);

@@ -6,7 +6,7 @@
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:47:44 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/03/30 21:37:24 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/03/31 21:21:39 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	init_philosophers(t_simulation *simulation, int philosopher_count)
 	{
 		pthread_mutex_init(&simulation->forks[i], NULL);
 		pthread_mutex_init(&simulation->philosophers[i].action_mutex, NULL);
+		pthread_mutex_init(&simulation->eat_mutex, NULL);
 		simulation->philosophers[i].position = i;
 		simulation->philosophers[i].eat_count = 0;
 		simulation->philosophers[i].eats = 0;
