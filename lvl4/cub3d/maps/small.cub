@@ -1,0 +1,14 @@
+EA ./texture/red_brick.xpm
+
+NO ./texture/wood.xpm
+
+SO ./texture/purple_stone.xpm
+
+WE ./texture/color_stone.xpm
+
+F 0,50,100
+C 0,0,255
+
+111
+1N1
+111
