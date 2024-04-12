@@ -8,7 +8,7 @@
   Kick off: January 2024
 </p>
 <p align="center">
-  <img width="500" alt="HolyGraph" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/8a19c2d4-f0e1-4a64-b958-57111da28ec5">
+  <img width="500" alt="common_core" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/4adddb88-0719-4678-9fbb-85c7a28bbe5e">
 </p>
 
 ## Finished Projects
