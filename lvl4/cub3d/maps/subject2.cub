@@ -1,11 +1,10 @@
+EA ./texture/background/background_4.xpm
 
-EA ./texture/red_brick.xpm
+NO ./texture/background/background_3.xpm
 
-NO ./texture/wood.xpm
+SO ./texture/background/background_2.xpm
 
-SO ./texture/purple_stone.xpm
-
-WE ./texture/color_stone.xpm
+WE ./texture/background/background_1.xpm
 
 F 220,100,0
 C 225,30,0

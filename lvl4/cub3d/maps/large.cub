@@ -1,12 +1,12 @@
-EA ./texture/red_brick.xpm
+EA ./texture/background/background_4.xpm
 
-NO ./texture/wood.xpm
+NO ./texture/background/background_3.xpm
 
-SO ./texture/purple_stone.xpm
+SO ./texture/background/background_2.xpm
 
-WE ./texture/color_stone.xpm
+WE ./texture/background/background_1.xpm
 
-F    127,255,170
+F 127,255,170
 
 C 176,224,230 
 

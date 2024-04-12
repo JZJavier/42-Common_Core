@@ -6,9 +6,11 @@ SO ./texture/background/background_2.xpm
 
 WE ./texture/background/background_1.xpm
 
-F 0,50,100
-C 0,0,255
+F 112,112,112
+C 56,56,56
 
-111
-1N1
-111
+111111
+100101
+1010D1
+1100N1
+111111

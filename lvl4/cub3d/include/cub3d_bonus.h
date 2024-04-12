@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuarez- <jjuarez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 04:45:47 by yugao             #+#    #+#             */
-/*   Updated: 2024/04/11 22:58:54 by jjuarez-         ###   ########.fr       */
+/*   Created: 2024/04/10 17:48:59 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/04/11 23:03:06 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -38,9 +39,12 @@
 # define S_CODE 1
 # define A_CODE 0
 # define D_CODE 2
+# define SPACE 49
 # define TAB_CODE 48
 # define L_ARROW 123
 # define R_ARROW 124
+# define IMG_DOOR "./texture/background/background_door.xpm"
+# define IMG_EMP "./texture/background/background_empty.xpm"
 // # define TEM_SETOFF 530
 // # define TEM_MAP_LEN 1024
 # define TEM_SETOFF 0
@@ -116,10 +120,20 @@ typedef struct s_size
 	int	y;
 }					t_size;
 
+typedef struct s_anime
+{
+	t_img_info	ani1;
+	t_img_info	ani2;
+	t_img_info	ani3;
+	t_img_info	ani4;
+	t_img_info	ani5;
+}					t_ani;
+
 typedef struct s_info
 {
 	void		*mlx;
 	void		*win;
+	char		*parse;
 	t_vec		ctr_ang;
 	t_pos		ctr_pos;
 	t_map		map_info;
@@ -131,6 +145,9 @@ typedef struct s_info
 	t_img_info	tex_down;
 	t_img_info	tex_left;
 	t_img_info	tex_right;
+	t_img_info	door;
+	t_img_info	emp;
+	t_ani		anime;
 	int			color;
 	int			color_sky;
 	int			color_floor;
@@ -283,5 +300,14 @@ char			*add_space(t_parse *parse, char *line);
 int				check_walls(t_parse *parse, char *map);
 
 void			destory_all(t_info *info, t_parse *parse);
+
+/*	-------------------------- BONUS --------------------------*/
+int				mouse_move_hook(int x, int y, t_info *info);
+void			change_doors(t_mtx matrix);
+void			init_img_tex(t_info *info);
+void			dispara(t_info *info);
+int				norminette_aux(t_info *tem, t_vec v, t_bool is_ahead);
+int				mouse_shoot(int button, int x, int y, t_info *info);
+int				second_aux(t_info *info);
 
 #endif
