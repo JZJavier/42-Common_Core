@@ -9,12 +9,13 @@ make a dynamic view inside a maze, in which you’ll have to find your way.
 </p>
 
 ## Raycasting
+<br>
 <p align="center">
   <img src="https://github.com/JZJavier/42-Common_Core/assets/76801285/db3be633-d4e8-429e-a912-d24a3921bb16" alt="ray" align="left">
 </p>
 <br><br><br>
 Raycasting is a technique used in computer graphics to render a 3D scene from a 2D perspective. It involves casting rays from the viewpoint (typically the camera) into the scene and determining what objects, if any, intersect with those rays. This technique is commonly used in applications such as rendering 3D environments in video games or simulating how light interacts with objects in a scene.
-<br><br><br>
+<br><br><br><br><br>
 
 ## Mandatory part
 - The executable cub3d will receive a valid path to the map as the only argument.
