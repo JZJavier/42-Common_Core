@@ -17,6 +17,9 @@ An IP address uniquely identifies a device on a network. It comprises two parts:
 
 ## Subnet Mask
 A subnet mask distinguishes network and host portions of an IP address. By applying bitwise AND operations between the IP address and the mask, we determine the network address and available host range.
+<p align="center">
+<img width="400" alt="100" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/7745c389-0b29-462a-9369-9132727216a6">
+</p>
 
 ## Switch
 A switch connects devices within a network, efficiently directing data packets to their destinations. Unlike a router, it operates within a single network and cannot communicate across networks.
