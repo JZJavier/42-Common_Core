@@ -32,3 +32,9 @@ Certain IP address ranges are reserved for specific purposes, such as private ne
 
 # Conclusion
 NetPractice provides a comprehensive exploration of networking fundamentals, from TCP/IP protocols to subnetting and network device functionality. By mastering these concepts, you'll build a solid foundation for designing and troubleshooting networks effectively.
+
+## Grade
+<p align="center">
+<img width="210" alt="100" src="https://github.com/JZJavier/42/assets/76801285/c82ce2c0-7889-440f-9db0-92e7a2cc7c89">
+</p>
+
