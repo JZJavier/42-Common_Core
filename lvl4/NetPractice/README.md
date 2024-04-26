@@ -29,6 +29,9 @@ A router connects multiple networks, facilitating inter-network communication. E
 
 ## Routing Table
 The routing table stores routes to different network destinations. It consists of destination addresses and their corresponding next hop routers. Default routes handle packets when no specific route is available.
+<p align="center">
+<img width="400" alt="100" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/1d54dfec-7481-43e2-9482-7c0a47193fda">
+</p>
 
 ## IP Addressing and Subnetting
 Understanding IP addressing and subnetting is crucial for designing and managing networks effectively. Subnets organize IP addresses into manageable groups, enhancing network efficiency.
