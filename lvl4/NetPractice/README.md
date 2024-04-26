@@ -5,6 +5,9 @@
 # Important Concepts
 ## TCP: Transport Layer
 TCP, or Transmission Control Protocol, is a fundamental communications standard that ensures reliable data transmission over networks. It establishes connections between devices, breaks data into packets, and guarantees delivery without loss or corruption.
+<p align="center">
+<img width="500" alt="100" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/f8938b4c-8ef9-4791-82a1-baf367bd1023">
+</p>
 
 ## IP Address: Network Layer
 An IP address uniquely identifies a device on a network. It comprises two parts: the host address and the network address. IPv4, the version used in NetPractice, employs a 32-bit address space.
