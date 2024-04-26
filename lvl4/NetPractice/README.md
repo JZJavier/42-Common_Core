@@ -11,6 +11,9 @@ TCP, or Transmission Control Protocol, is a fundamental communications standard 
 
 ## IP Address: Network Layer
 An IP address uniquely identifies a device on a network. It comprises two parts: the host address and the network address. IPv4, the version used in NetPractice, employs a 32-bit address space.
+<p align="center">
+<img width="500" alt="100" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/e1df51a6-16e0-42bd-8cc4-964e2906ba9d">
+</p>
 
 ## Subnet Mask
 A subnet mask distinguishes network and host portions of an IP address. By applying bitwise AND operations between the IP address and the mask, we determine the network address and available host range.
