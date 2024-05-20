@@ -6,19 +6,25 @@
 /*   By: jjuarez- < jjuarez-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 18:59:19 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/05/18 07:55:44 by jjuarez-         ###   ########.fr       */
+/*   Updated: 2024/05/19 21:27:26 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <string.h>
 
 int	main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
 		std::cerr << "./sed <filename> s1 s2" << std::endl;
+		return (1);
+	}
+	if (!strcmp(argv[2], argv[3]))
+	{
+		std::cerr << "s1 and s2 are the same" << std::endl;
 		return (1);
 	}
 	std::string	filename = argv[1];
