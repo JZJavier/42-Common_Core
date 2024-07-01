@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 13:29:15 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/07/01 07:15:25 by javier           ###   ########.fr       */
+/*   Created: 2024/06/28 13:29:23 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/07/01 07:04:10 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScravTrap.hpp"
+# include <iostream>
+# include <string> 
 
-int main()
+#ifndef SCRAVTRAP
+#define SCARVTRAP
+
+#include "ClapTrap.hpp"
+
+class ScravTrap: public ClapTrap
 {
-    ScravTrap scrav1("Juan");
-    ScravTrap scrav2("Paco");
-    ScravTrap scrav3 = scrav1;
+public:
+    ScravTrap();
+    ScravTrap(std::string name);
+    ScravTrap(const ScravTrap &obj);
+    ScravTrap&		operator=(const ScravTrap &obj);
+    ~ScravTrap();
+    void attack(const std::string& target);
+    void guardGate(void);
+};
 
-    scrav1.attack("JordiPuyol");
-    scrav1.takeDamage(5);
-    scrav1.beRepaired(3);
-
-    scrav2.SetName("Paco");
-
-    scrav2.attack("Andreu");
-    scrav2.takeDamage(11);
-    scrav2.beRepaired(4);
-    scrav2.guardGate();
-    
-    return 0;
-}
+#endif

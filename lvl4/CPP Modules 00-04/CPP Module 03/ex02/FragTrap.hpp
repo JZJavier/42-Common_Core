@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 13:29:15 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/07/01 07:15:25 by javier           ###   ########.fr       */
+/*   Created: 2024/06/28 13:29:23 by jjuarez-          #+#    #+#             */
+/*   Updated: 2024/07/01 07:21:37 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
+# include <string> 
+
+#ifndef FRAGTRAP
+#define FRAGTRAP
+
 #include "ScravTrap.hpp"
 
-int main()
+class FragTrap: public ClapTrap
 {
-    ScravTrap scrav1("Juan");
-    ScravTrap scrav2("Paco");
-    ScravTrap scrav3 = scrav1;
+public:
+    FragTrap();
+    FragTrap(std::string name);
+    FragTrap(const FragTrap &obj);
+    FragTrap&		operator=(const FragTrap &obj);
+    ~FragTrap();
+    void highFivesGuys(void);
+};
 
-    scrav1.attack("JordiPuyol");
-    scrav1.takeDamage(5);
-    scrav1.beRepaired(3);
-
-    scrav2.SetName("Paco");
-
-    scrav2.attack("Andreu");
-    scrav2.takeDamage(11);
-    scrav2.beRepaired(4);
-    scrav2.guardGate();
-    
-    return 0;
-}
+#endif

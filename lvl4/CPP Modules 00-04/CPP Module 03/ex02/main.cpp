@@ -6,28 +6,28 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:29:15 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/07/01 07:15:25 by javier           ###   ########.fr       */
+/*   Updated: 2024/07/01 07:23:03 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScravTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ScravTrap scrav1("Juan");
-    ScravTrap scrav2("Paco");
-    ScravTrap scrav3 = scrav1;
+    FragTrap frag1("Juan");
+    FragTrap frag2("Paco");
+    FragTrap frag3 = frag1;
 
-    scrav1.attack("JordiPuyol");
-    scrav1.takeDamage(5);
-    scrav1.beRepaired(3);
+    frag1.attack("JordiPuyol");
+    frag1.takeDamage(5);
+    frag1.beRepaired(3);
 
-    scrav2.SetName("Paco");
+    frag2.SetName("Paco");
 
-    scrav2.attack("Andreu");
-    scrav2.takeDamage(11);
-    scrav2.beRepaired(4);
-    scrav2.guardGate();
+    frag2.attack("Andreu");
+    frag2.takeDamage(11);
+    frag2.beRepaired(4);
+    frag2.highFivesGuys();
     
     return 0;
 }
