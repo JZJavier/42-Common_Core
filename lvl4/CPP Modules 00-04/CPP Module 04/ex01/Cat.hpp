@@ -18,7 +18,7 @@
 
 class Cat: public Animal
 {
-protected:
+private:
     std::string type;
     Brain *brain;
     

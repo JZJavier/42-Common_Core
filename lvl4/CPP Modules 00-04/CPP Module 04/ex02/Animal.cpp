@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jjuarez- < jjuarez-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:29:55 by jjuarez-          #+#    #+#             */
-/*   Updated: 2024/07/01 11:05:11 by javier           ###   ########.fr       */
+/*   Updated: 2024/07/01 19:34:03 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,4 @@ Animal& Animal::operator=(const Animal &obj)
 std::string Animal::getType(void) const
 {
     return type;
-}
-    
-void Animal::makeSound() const
-{
-    std::cout << "Sound" << std::endl;
-}
-
-void Animal::setIdea(int index, const std::string& idea)
-{
-    brain->setIdea(index, idea);
-}
-
-std::string Animal::getIdea(int index) const
-{
-    return brain->getIdea(index);
 }

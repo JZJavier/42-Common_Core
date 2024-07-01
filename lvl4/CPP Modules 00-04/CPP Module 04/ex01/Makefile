@@ -6,11 +6,11 @@
 #    By: javier <javier@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 08:08:51 by jjuarez-          #+#    #+#              #
-#    Updated: 2024/07/01 10:35:34 by javier           ###   ########.fr        #
+#    Updated: 2024/07/01 14:02:37 by javier           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Poly
+NAME		= Abstract
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g
 RM			= rm -f
