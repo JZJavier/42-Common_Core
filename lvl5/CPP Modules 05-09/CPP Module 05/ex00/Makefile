@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: javier <javier@student.42.fr>              +#+  +:+       +#+         #
+#    By: jjuarez- < jjuarez-@student.42madrid.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 08:08:51 by jjuarez-          #+#    #+#              #
-#    Updated: 2024/08/02 17:37:12 by javier           ###   ########.fr        #
+#    Updated: 2024/08/03 19:07:59 by jjuarez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g
 RM			= rm -f
 
-SRC			= main.cpp BAForm::execute(executor);AForm::execute(executor);ureaucrat.cpp
+SRC			= main.cpp 	Bureaucrat.cpp
 OBJ			= $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jjuarez- < jjuarez-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 17:39:41 by javier            #+#    #+#             */
-/*   Updated: 2024/08/02 18:07:39 by javier           ###   ########.fr       */
+/*   Updated: 2024/08/03 19:12:41 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 class Intern
 {
 	private:
-		AForm *createShrubberyCreationForm(std::string target) const;
-		AForm *createRobotomyRequestForm(std::string target) const;
-		AForm *createPresidentialPardonForm(std::string target) const;
+		AForm *createShrubberyCreationForm(const std::string& target) const;
+		AForm *createRobotomyRequestForm(const std::string& target) const;
+		AForm *createPresidentialPardonForm(const std::string& target) const;
 	public:
 		Intern();
 		Intern(const Intern &copy);

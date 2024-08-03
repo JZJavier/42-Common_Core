@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jjuarez- < jjuarez-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 17:39:57 by javier            #+#    #+#             */
-/*   Updated: 2024/08/02 18:09:39 by javier           ###   ########.fr       */
+/*   Updated: 2024/08/03 19:12:33 by jjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ AForm *Intern::makeForm(std::string form, std::string target)
     return NULL;
 }
 
-AForm *Intern::createShrubberyCreationForm(std::string target) const
+AForm *Intern::createShrubberyCreationForm(const std::string& target) const
 {
     return new ShrubberyCreationForm(target);
 }
 
-AForm *Intern::createRobotomyRequestForm(std::string target) const
+AForm *Intern::createRobotomyRequestForm(const std::string& target) const
 {
     return new RobotomyRequestForm(target);
 }
 
-AForm *Intern::createPresidentialPardonForm(std::string target) const
+AForm *Intern::createPresidentialPardonForm(const std::string& target) const
 {
     return new PresidentialPardonForm(target);
 }
