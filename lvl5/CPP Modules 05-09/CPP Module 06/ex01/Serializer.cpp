@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 06:24:01 by javier            #+#    #+#             */
-/*   Updated: 2024/08/04 06:32:20 by javier           ###   ########.fr       */
+/*   Updated: 2024/08/13 12:16:22 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,24 +55,26 @@ Data* Serializer::deserialize() {
         delete data;
         return NULL;
     }
+    pos += 3;
+    
     std::string::size_type endPos = this->_data.find("n:", pos);
     if (endPos == std::string::npos) {
         delete data;
         return NULL;
     }
-    s1 = this->_data.substr(pos + 3, endPos - (pos + 3));
+    s1 = this->_data.substr(pos, endPos - pos);
 
-    pos = endPos;
+    pos = endPos + 2;
     endPos = this->_data.find("s2:", pos);
     if (endPos == std::string::npos) {
         delete data;
         return NULL;
     }
-    std::stringstream ss(this->_data.substr(pos + 2, endPos - (pos + 2)));
+    std::stringstream ss(this->_data.substr(pos, endPos - pos));
     ss >> n;
 
-    pos = endPos;
-    s2 = this->_data.substr(pos + 3);
+    pos = endPos + 3;
+    s2 = this->_data.substr(pos);
 
     data->s1 = s1;
     data->n = n;
