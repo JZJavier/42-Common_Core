@@ -8,7 +8,7 @@
   Kick off: January 2024
 </p>
 <p align="center">
-  <img width="500" alt="Common Core" src="https://github.com/JZJavier/42-Common_Core/assets/76801285/29e96e8f-80ff-4b25-b7b8-f500c3a1aed0">
+  <img width="500" alt="Common Core" src="https://github.com/user-attachments/assets/cc2a63e8-826b-456f-be0b-54cb216c61ee">
 </p>
 
 ## Finished Projects
