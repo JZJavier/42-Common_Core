@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test DELETE Method</title>
+</head>
+<body>
+    <h1>Test DELETE Method</h1>
+    <button id="deleteButton">Delete Resource</button>
+
+    <script>
+        document.getElementById('deleteButton').addEventListener('click', function() {
+            var url = 'http://127.0.0.1:8083/upload/test.txt';
+
+            fetch(url, {
+                method: 'DELETE'
+            }).then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Failed to delete resource');
+                }
+            }).then(data => {
+                console.log('Resource deleted:', data);
+                alert('Resource deleted successfully');
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Failed to delete resource');
+            });
+        });
+    </script>
+</body>
+</html>
