@@ -32,7 +32,7 @@
 - exit
 
 ## Team Work
-This project was carried out in collaboration with `Yu Gao`.
+This project was carried out in collaboration with `Yuhong Gao`.
 For further information about him and his work, please refer to the links provided.
 
 -   [Linkedin](https://www.linkedin.com/in/yuhong-g-71796925a/)
