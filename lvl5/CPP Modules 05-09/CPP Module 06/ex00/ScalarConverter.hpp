@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 05:44:12 by javier            #+#    #+#             */
-/*   Updated: 2024/08/04 06:01:18 by javier           ###   ########.fr       */
+/*   Updated: 2024/08/21 17:16:03 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class ScalarConverter
 {
 	private:
 		std::string _input;
-	public:
 		ScalarConverter();
+	public:
 		ScalarConverter(std::string input);
 		ScalarConverter(ScalarConverter const & src);
 		~ScalarConverter();

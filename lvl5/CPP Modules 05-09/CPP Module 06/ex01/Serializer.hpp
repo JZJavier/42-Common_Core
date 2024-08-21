@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 06:24:03 by javier            #+#    #+#             */
-/*   Updated: 2024/08/04 06:29:40 by javier           ###   ########.fr       */
+/*   Updated: 2024/08/21 17:18:56 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 
 #include <iostream>
 #include <string>
-#include <sstream>
 
-struct Data
-{
-	std::string s1;
-	int n;
-	std::string s2;
-};
+typedef	size_t	uintptr_t;
 
-class Serializer
+typedef struct Data {
+
+	int	 			num;
+	std::string		str;
+
+}	Data;
+
+class Serialization
 {
+
 	private:
-		std::string _data;
+		Serialization();
+		~Serialization();
+		Serialization(const Serialization&);
+    	Serialization& 	operator=(const Serialization&);
+
 	public:
-		Serializer();
-		Serializer(Serializer const & src);
-		~Serializer();
-		Serializer & operator=(Serializer const & rhs);
-		std::string getData() const;
-		void setData(std::string data);
-		Data * deserialize();
-		std::string serialize(Data * data);
+		static uintptr_t	serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
 };
 
 #endif

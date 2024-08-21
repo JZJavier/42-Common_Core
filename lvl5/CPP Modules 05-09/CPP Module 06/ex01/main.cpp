@@ -6,43 +6,30 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 06:25:16 by javier            #+#    #+#             */
-/*   Updated: 2024/08/13 12:15:49 by javier           ###   ########.fr       */
+/*   Updated: 2024/08/21 17:22:21 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-int main()
-{
-    Serializer s;
-    Data *data;
-    std::string serialized;
+int main() {
+    Data originalData;
+    originalData.num = 7;
+    originalData.str = "illo";
 
-    data = new Data;
-    data->s1 = "illo";
-    data->n = 4;
-    data->s2 = "que pasa";
+    uintptr_t raw = Serialization::serialize(&originalData);
+    std::cout << "Serialized Data: " << raw << std::endl;
 
-    serialized = s.serialize(data);
-    std::cout << "Serialized: " << serialized << std::endl;
+    Data* deserializedData = Serialization::deserialize(raw);
 
-    s.setData(serialized);
+    std::cout << "Deserialized Data num: " << deserializedData->num << std::endl;
+    std::cout << "Deserialized Data str: " << deserializedData->str << std::endl;
 
-    Data *deserializedData = s.deserialize();
-    if (deserializedData)
-    {
-        std::cout << "Deserialized:" << std::endl;
-        std::cout << "s1: " << deserializedData->s1 << std::endl;
-        std::cout << "n: " << deserializedData->n << std::endl;
-        std::cout << "s2: " << deserializedData->s2 << std::endl;
+    if (deserializedData == &originalData) {
+        std::cout << "Deserialization was successful: pointers match." << std::endl;
+    } else {
+        std::cout << "Deserialization failed: pointers do not match." << std::endl;
     }
-    else
-    {
-        std::cout << "Deserialization failed" << std::endl;
-    }
-
-    delete data;
-    delete deserializedData;
 
     return 0;
 }
